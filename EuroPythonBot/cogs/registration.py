@@ -124,8 +124,8 @@ class Registration(commands.Cog):
         reg_channel = self.bot.get_channel(config.REG_CHANNEL_ID)
 
         await reg_channel.purge()
-        await order_ins.fetch_data()
-        order_ins.load_registered()
+        # await order_ins.fetch_data()
+        # order_ins.load_registered()
 
         _title = "Welcome to EuroPython 2023 on Discord! 🎉🐍"
         _desc = (
