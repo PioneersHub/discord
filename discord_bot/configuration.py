@@ -52,7 +52,7 @@ class Config(metaclass=Singleton):
 
             self.GUILD = int(config["server"]["GUILD"])
 
-            # from the config.toml get all keys and values from the [roles] and [cole_colors] section
+            # from the config.toml get all keys and values from the [roles] and [role_colors] section
             self.ROLES = config["roles"]
             self.ROLE_COLORS = config["role_colors"]
             # self.ROLE_IDS = {role: int(role_id) for role, role_id in self.ROLES.items()}

@@ -1,21 +1,21 @@
 [conference]
-CONFERENCE_NAME = "PyData Berlin 2025"
-CONFERENCE_WEBSITE = "https://pydata.org/berlin2025/"
-CONFERENCE_YEAR = 2025
-VOLUNTEER_SHIRT_COLOR = "green"
+CONFERENCE_NAME = "PyCon DE & PyData 2026"
+CONFERENCE_WEBSITE = "https://2026.pycon.de/"
+CONFERENCE_YEAR = 2026
+VOLUNTEER_SHIRT_COLOR = "?"
 
 [server]
-GUILD = 1340999177139650561
-CONFERENCE_SETUP_DONE = true
+GUILD = 955933777706762280
+CONFERENCE_SETUP_DONE = false
 
 [pytanis]
-PRETALX_EVENT_NAME = "berlin2025"
+PRETALX_EVENT_NAME = "pyconde-pydata-2026"
 
 [logging]
 LOG_LEVEL = "INFO"
 
 # =====
-# used by discord_bot/conference_setup.py script. [role_colors] must match the values in [roles]
+# used by discord_bot/conference_setup.py script. [role_colors] keys must match the keys in [roles]
 [role_colors]
 Organiser = "#ff9b00"  # orange
 Volunteer = "#fac800"  # yellow
@@ -29,20 +29,20 @@ Remote = "#96dc00"  # light green
 # =====
 # fill by running discord_bot/conference_setup.py
 [roles]
-Organiser = 1386648341777092702
-Volunteer = 1386648343567929426
-Attendee = 1386648344721489970
-Speaker = 1386648345547771905
-Session-Chair = 1386648347414233198
-Sponsor = 1386648348647227453
-On-Site = 1386648350270685246
-Remote = 1386648351813926912
+Organiser = 1362862779173961919
+Volunteer = 1472973854820536484
+Attendee = 1472973856217235619
+Speaker = 1472973857055969295
+Session-Chair = 1472973858469449931
+Sponsor = 1472973859534803107
+On-Site = 1473066851658498140
+Remote = 1472973860403024044
 
 [registration]
-REG_CHANNEL_ID = 1394333955683123270
-REG_HELP_CHANNEL_ID = 1394333957457317900
+REG_CHANNEL_ID = 1473207660978376775
+REG_HELP_CHANNEL_ID = 1473207662148583548
 # =====
-REG_LOG_CHANNEL_ID = 1394333364538052618
+REG_LOG_CHANNEL_ID = 1216373483114598491
 
 
 [job_board]
@@ -57,15 +57,14 @@ TICKETS_VALIDATION_ROUTE="/tickets/validate_attendee/"
 [programme_notifications]
 timezone = "Europe/Berlin"
 timewarp = false  # true for testing
-conference_days_first = "2025-09-01"
-conference_days_last = "2025-09-03"
+conference_days_first = "2026-04-14"
+conference_days_last = "2026-04-16"
 conference_afternoon_session_start_time = 13
-# pretalx_event_name = "berlin2025"
-pretalx_schedule_url = "https://pretalx.com/api/events/berlin2025/schedules/latest/?expand=slots,slots.room,slots.submission,slots.submission.speakers,slots.submission.submission_type,slots.submission.track"
-pretalx_talk_url = "https://cfp.pydata.org/berlin2025/talk/{code}"
-# conference_website_session_base_url = "https://2025.pycon.de/program/{slug}"
-# conference_website_api_session_url = "https://2025.pycon.de/program/{code}"
-video_url = "https://videos.pydata-berlin.org"
+pretalx_schedule_url = "https://pretalx.com/api/events/pyconde-pydata-2026/schedules/latest/?expand=slots,slots.room,slots.submission,slots.submission.speakers,slots.submission.submission_type,slots.submission.track"
+pretalx_talk_url = "https://cfp.pydata.org/pyconde-pydata-2026/talk/{code}"
+# conference_website_session_base_url = "https://2026.pycon.de/program/{slug}"
+# conference_website_api_session_url = "https://2026.pycon.de/program/{code}"
+video_url = "https://talks.pycon.de/"
 
 [[programme_notifications.notification_channels]]
 webhook_id = "PROGRAMME_NOTIFICATIONS"

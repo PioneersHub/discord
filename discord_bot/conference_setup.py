@@ -371,7 +371,7 @@ class ConferenceSetup:
         # await self._setup_categories()  # DONE
         # await self._setup_registration_channels()  # DONE
         # await self._setup_conference_channels()  # DONE
-        # await self._setup_rooms_channels()  # DONE
+        # await self._setup_rooms_channels()
         # await self._setup_sponsors_channels()
 
     def _format_role_name(self, role_name: str) -> str:
@@ -475,8 +475,8 @@ class ConferenceSetup:
 
     async def start(self) -> None:
         """Set up the conference roles, categories and channels."""
-        # await self._create_roles()  # DONE
-        # await self._setup_categories_and_channels()
+        # await self._create_roles()
+        await self._setup_categories_and_channels()
         # await self._setup_livestream_urls()
 
 
@@ -486,8 +486,9 @@ async def on_ready() -> None:
     msg = f"We have logged in as '{client.user}'."
     _logger.info(msg)
 
-    _logger.info("Starting conference setup...")
     cs = ConferenceSetup(config=configuration.Config())
+    msg = f"Starting conference setup for guild : '{cs.guild.name}' (ID: {cs.guild.id})..."
+    _logger.info(msg)
     await cs.start()
     _logger.info("Conference setup completed.")
 
