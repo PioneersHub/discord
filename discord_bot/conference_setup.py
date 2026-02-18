@@ -371,8 +371,8 @@ class ConferenceSetup:
         # await self._setup_categories()  # DONE
         # await self._setup_registration_channels()  # DONE
         # await self._setup_conference_channels()  # DONE
-        # await self._setup_rooms_channels()
-        # await self._setup_sponsors_channels()
+        # await self._setup_rooms_channels()  # DONE
+        # await self._setup_sponsors_channels()  # DONE
 
     def _format_role_name(self, role_name: str) -> str:
         """Format the role name to match the Discord server."""

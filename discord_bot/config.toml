@@ -46,7 +46,7 @@ REG_LOG_CHANNEL_ID = 1216373483114598491
 
 
 [job_board]
-JOB_BOARD_CHANNEL_ID = 1410336053197279303
+JOB_BOARD_CHANNEL_ID = 1473687386746654904
 JOB_BOARD_TESTING = false
 
 [tickets]
@@ -70,22 +70,55 @@ video_url = "https://talks.pycon.de/"
 webhook_id = "PROGRAMME_NOTIFICATIONS"
 include_channel_in_embeds = true
 
-# Kuppelsaal channel: 4560
-[programme_notifications.rooms.4560]
-webhook_id = "ROOM_4560"
-discord_channel_id = "1394335693916082409"
+# Zeiss Plenary (Spectrum) channel: 4989
+[programme_notifications.rooms.4989]
+webhook_id = "ROOM_4989"
+discord_channel_id = "1363604787832164363"
 
-# B09 channel: 4561
-[programme_notifications.rooms.4561]
-webhook_id = "ROOM_4561"
-discord_channel_id = "1394335699158827059"
 
-# B07-B08 channel: 4562
-[programme_notifications.rooms.4562]
-webhook_id = "ROOM_4562"
-discord_channel_id = "1394335703453667541"
+# Titanium [2nd Floor] channel: 4990
+[programme_notifications.rooms.4990]
+webhook_id = "ROOM_4990"
+discord_channel_id = "1473687352655479007"
 
-# B05-B06 channel: 4563
-[programme_notifications.rooms.4563]
-webhook_id = "ROOM_4563"
-discord_channel_id = "1394335707191050353"
+
+# Helium [3rd Floor] channel: 4991
+[programme_notifications.rooms.4991]
+webhook_id = "ROOM_4991"
+discord_channel_id = "1473687356652654623"
+
+
+# Platinum [2nd Floor] channel: 4992
+[programme_notifications.rooms.4992]
+webhook_id = "ROOM_4992"
+discord_channel_id = "1473687362147188909"
+
+
+# Europium [3rd Floor] channel: 4993
+[programme_notifications.rooms.4993]
+webhook_id = "ROOM_4993"
+discord_channel_id = "1473687365477339362"
+
+
+# Palladium [2nd Floor] channel: 4995
+[programme_notifications.rooms.4995]
+webhook_id = "ROOM_4995"
+discord_channel_id = "1473687370233679975"
+
+
+# Ferrum [Ground Floor] channel: 4996
+[programme_notifications.rooms.4996]
+webhook_id = "ROOM_4996"
+discord_channel_id = "1473687374063075399"
+
+
+# Dynamicum [Ground Floor] channel: 4997
+[programme_notifications.rooms.4997]
+webhook_id = "ROOM_4997"
+discord_channel_id = "1473687379884638311"
+
+
+# OpenSpace Lounge [3rd Floor] channel: 4999
+[programme_notifications.rooms.4999]
+webhook_id = "ROOM_4999"
+discord_channel_id = "1473687383424634880"
