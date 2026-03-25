@@ -98,6 +98,12 @@ class RegistrationForm(discord.ui.Modal, title="Europython 2023 Registration"):
                 order=self.order.value,
                 roles=roles,
             )
+            # log the mapping of ticket to discord id to file
+            await order_ins.log_ticket_and_discord_id_to_file(
+                discord_user_id=interaction.user.id,
+                ticket_id=self.order.value,
+            )
+
             msg = f"Thank you {self.name.value}, you are now registered!"
 
             if CHANGE_NICKNAME and changed_nickname:

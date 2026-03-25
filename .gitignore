@@ -7,3 +7,4 @@ __pycache__
 .DS_Store
 registered_log.txt
 posted_jobs.txt
+discord_ticket_log.txt

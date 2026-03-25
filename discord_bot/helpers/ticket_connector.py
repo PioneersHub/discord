@@ -37,6 +37,7 @@ class TicketOrder(metaclass=Singleton):
         self.orders = {}
 
         self.registered_file = getattr(self.config, "REGISTERED_LOG_FILE", "./registered_log.txt")
+        self.discord_ticket_log_file = getattr(self.config, "DISCORD_TICKET_LOG_FILE", "./discord_ticket_log.txt")
         self.REGISTERED_SET = set()
 
     def load_registered(self) -> None:
@@ -128,3 +129,8 @@ class TicketOrder(metaclass=Singleton):
             msg = f"Ticket already registered - id: {key}"
             raise AlreadyRegisteredError(msg)
         return True
+
+    async def log_ticket_and_discord_id_to_file(self, discord_user_id: int, ticket_id: str) -> None:
+        """Log the mapping of ticket to discord id to file."""
+        async with aiofiles.open(self.discord_ticket_log_file, mode="a") as f:
+            await f.write(f"{discord_user_id}:{ticket_id}\n")
