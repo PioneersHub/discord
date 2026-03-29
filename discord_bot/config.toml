@@ -50,7 +50,7 @@ JOB_BOARD_CHANNEL_ID = 1473687386746654904
 JOB_BOARD_TESTING = false
 
 [tickets]
-TICKETS_BASE_URL="https://val.pydata-berlin.org"
+TICKETS_BASE_URL="https://val.pycon.de"
 TICKETS_REFRESH_ROUTE="/tickets/refresh_all/"
 TICKETS_VALIDATION_ROUTE="/tickets/validate_attendee/"
 
