@@ -50,7 +50,7 @@ class RegistrationButton(discord.ui.Button["Registration"]):
 
 class RegistrationForm(discord.ui.Modal, title="Europython 2023 Registration"):
     order = discord.ui.TextInput(
-        label="Order/Ticket ID (e.g. 'ABCD1')",
+        label="Order ID (e.g. 'ABCD1')",
         required=True,
         min_length=5,
         max_length=5,

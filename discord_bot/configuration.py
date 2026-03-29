@@ -49,6 +49,7 @@ class Config(metaclass=Singleton):
             self.CONFERENCE_NAME = config["conference"]["CONFERENCE_NAME"]
             self.CONFERENCE_YEAR = config["conference"]["CONFERENCE_YEAR"]
             self.VOLUNTEER_SHIRT_COLOR = config["conference"].get("VOLUNTEER_SHIRT_COLOR", "volunteer")
+            self.TICKET_EMAIL_ADDRESS = config["conference"]["TICKET_EMAIL_ADDRESS"]
 
             self.GUILD = int(config["server"]["GUILD"])
 
