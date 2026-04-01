@@ -58,11 +58,17 @@ TICKETS_VALIDATION_ROUTE="/tickets/validate_attendee/"
 [programme_notifications]
 timezone = "Europe/Berlin"
 timewarp = false  # true for testing
+# general programme notifications are send 5 minutes before the session, and
+# room notifications are send 2 minutes before the session
+# TIME_DURING_CONFERENCE = "2025-09-01T09:14:55+02:00"  # programme notification
+# TIME_DURING_CONFERENCE = "2025-09-01T09:17:55+02:00"  # room notification
+# timewarp_time = "2026-04-14T10:24:50+02:00" # keynote program notification
+timewarp_time = "2026-04-14T11:39:50+02:00"
 conference_days_first = "2026-04-14"
 conference_days_last = "2026-04-16"
 conference_afternoon_session_start_time = 13
 pretalx_schedule_url = "https://pretalx.com/api/events/pyconde-pydata-2026/schedules/latest/?expand=slots,slots.room,slots.submission,slots.submission.speakers,slots.submission.submission_type,slots.submission.track"
-pretalx_talk_url = "https://cfp.pydata.org/pyconde-pydata-2026/talk/{code}"
+pretalx_talk_url = "https://pretalx.com/pyconde-pydata-2026/talk/{code}"
 # conference_website_session_base_url = "https://2026.pycon.de/program/{slug}"
 # conference_website_api_session_url = "https://2026.pycon.de/program/{code}"
 video_url = "https://talks.pycon.de/"
