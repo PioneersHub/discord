@@ -77,10 +77,10 @@ video_url = "https://talks.pycon.de/"
 webhook_id = "PROGRAMME_NOTIFICATIONS"
 include_channel_in_embeds = true
 
-# Zeiss Plenary (Spectrum) channel: 4989
+# Merck Plenary (Spectrum) channel: 4989
 [programme_notifications.rooms.4989]
 webhook_id = "ROOM_4989"
-discord_channel_id = "1363604787832164363"
+discord_channel_id = "1488998557603074118"
 
 
 # Titanium [2nd Floor] channel: 4990
