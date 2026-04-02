@@ -6,7 +6,6 @@ import re
 from pathlib import Path
 
 import discord
-import pandas as pd
 from dotenv import load_dotenv
 from pytanis import GSheetsClient, PretalxClient
 
@@ -43,8 +42,6 @@ class ConferenceSetup:
             _logger.critical(msg)
             raise ValueError(msg)
         self.pretalx_event_name = config.PRETALX_EVENT_NAME
-        self.livestreams_sheet_id = config.LIVESTREAMS_SHEET_ID
-        self.livestreams_worksheet_name = config.LIVESTREAMS_WORKSHEET_NAME
         self.conference_afternoon_session_start_time = config.CONFERENCE_AFTERNOON_SESSION_START_TIME
         self.conference_name = config.CONFERENCE_NAME
         self.conference_year = config.CONFERENCE_YEAR
@@ -421,63 +418,10 @@ class ConferenceSetup:
         _logger.info(msg)
         _logger.info("=========================================")
 
-    async def _setup_livestream_urls(self) -> None:
-        """Set up livestreams urls for the conference."""
-        _logger.info("Reading livestreams URLs from Google sheet.")
-        # get room names to discord channel IDs
-
-        _, rooms = self.pretalx_client.rooms(event_slug=self.pretalx_event_name)
-        room_name_to_id = {room.name.en: room.id for room in rooms}
-
-        livestream_urls = []
-        df = self.gsheets_client.gsheet_as_df(self.livestreams_sheet_id, self.livestreams_worksheet_name)
-        df = df[["Day", "Part of Day", "Room", "Start Time", "Event Link"]]
-        df["Start Time"] = pd.to_datetime(df["Start Time"], format="%d.%m.%Y %H:%M:%S")
-        # loop over the rows and create a channel for each livestream
-        for _, row in df.iterrows():
-            date = row["Start Time"].strftime("%Y-%m-%d")
-            period = "MORNING" if row["Part of Day"] == "Morning" else "AFTERNOON"
-            room_name = row["Room"]
-            start_time = int(row["Start Time"].strftime("%H"))
-            livestream_url = row["Event Link"]
-            # make sure the start and end times are matching the self.conference_afternoon_session_start_time env var
-            if period == "MORNING" and start_time >= self.conference_afternoon_session_start_time:
-                msg = (
-                    f"Start time '{start_time}' is after the afternoon session start time "
-                    f"'{self.conference_afternoon_session_start_time}'."
-                )
-                _logger.error(msg)
-                continue
-            if period == "AFTERNOON" and start_time < self.conference_afternoon_session_start_time:
-                msg = (
-                    f"Start time '{start_time}' is before the afternoon session start time "
-                    f"'{self.conference_afternoon_session_start_time}'."
-                )
-                _logger.error(msg)
-                continue
-
-            # get the discord channel ID for the room
-            room_id = room_name_to_id.get(room_name)
-            if not room_id:
-                msg = f"Room '{room_name}' not found."
-                _logger.error(msg)
-                continue
-
-            livestream_urls.append(f"LIVESTREAM_ROOM_{room_id}_{date}_{period}={livestream_url}")
-
-        _logger.info("=========================================")
-        _logger.info("!!MANUAL WORK REQUIRED!! Add the following lines to .secrets:")
-        msg = "\n".join(livestream_urls)
-        msg = f"\n{msg}"
-        _logger.info(msg)
-        _logger.info("=========================================")
-        _logger.info("Livestreams setup completed.")
-
     async def start(self) -> None:
         """Set up the conference roles, categories and channels."""
         # await self._create_roles()
         await self._setup_categories_and_channels()
-        # await self._setup_livestream_urls()
 
 
 @client.event
