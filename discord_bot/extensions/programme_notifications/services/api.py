@@ -140,12 +140,12 @@ class ApiClient:
         :param code: The session identifier code, as used by pretalx
         :return: A tuple with the session slug and audience experience level
         """
-        website_base_url = self.config.pretalx_talk_url  # conference_website_session_base_url
+        website_base_url = self.config.pretalx_talk_url
         session_url = yarl.URL(website_base_url.format(code=code)) if code else None
 
         # there is no API so we crawl the website and search for the
         # 'Python Skill Level' text
-        api_base_url = self.config.pretalx_talk_url  # conference_website_api_session_url
+        api_base_url = self.config.pretalx_talk_url
         url = api_base_url.format(code=code)
         async with self.session.get(url=url, raise_for_status=True) as response:
             # session_information = await response.json()

@@ -56,8 +56,6 @@ async def test_api_client_returns_level_and_url_for_session(
     config = configuration_factory(
         {
             "pretalx_talk_url": "https://2024.pycon.de/program/{code}",
-            # "conference_website_api_session_url": "https://2024.pycon.de/program/{code}",
-            # "conference_website_session_base_url": "https://2024.pycon.de/program/{slug}",
         }
     )
     # AND an api client with that session and configuration repository

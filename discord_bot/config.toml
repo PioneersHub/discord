@@ -60,17 +60,13 @@ timezone = "Europe/Berlin"
 timewarp = false  # true for testing
 # general programme notifications are send 5 minutes before the session, and
 # room notifications are send 2 minutes before the session
-# TIME_DURING_CONFERENCE = "2025-09-01T09:14:55+02:00"  # programme notification
-# TIME_DURING_CONFERENCE = "2025-09-01T09:17:55+02:00"  # room notification
-# timewarp_time = "2026-04-14T10:24:50+02:00" # keynote program notification
-timewarp_time = "2026-04-14T11:39:50+02:00"
+# timewarp_time = "2026-04-14T10:24:50+02:00"  # keynote program notification
+timewarp_time = "2026-04-14T11:39:50+02:00"  # room notification
 conference_days_first = "2026-04-14"
 conference_days_last = "2026-04-16"
 conference_afternoon_session_start_time = 13
 pretalx_schedule_url = "https://pretalx.com/api/events/pyconde-pydata-2026/schedules/latest/?expand=slots,slots.room,slots.submission,slots.submission.speakers,slots.submission.submission_type,slots.submission.track"
 pretalx_talk_url = "https://pretalx.com/pyconde-pydata-2026/talk/{code}"
-# conference_website_session_base_url = "https://2026.pycon.de/program/{slug}"
-# conference_website_api_session_url = "https://2026.pycon.de/program/{code}"
 video_url = "https://talks.pycon.de/"
 
 [[programme_notifications.notification_channels]]
@@ -82,48 +78,40 @@ include_channel_in_embeds = true
 webhook_id = "ROOM_4989"
 discord_channel_id = "1488998557603074118"
 
-
 # Titanium [2nd Floor] channel: 4990
 [programme_notifications.rooms.4990]
 webhook_id = "ROOM_4990"
 discord_channel_id = "1473687352655479007"
-
 
 # Helium [3rd Floor] channel: 4991
 [programme_notifications.rooms.4991]
 webhook_id = "ROOM_4991"
 discord_channel_id = "1473687356652654623"
 
-
 # Platinum [2nd Floor] channel: 4992
 [programme_notifications.rooms.4992]
 webhook_id = "ROOM_4992"
 discord_channel_id = "1473687362147188909"
-
 
 # Europium [3rd Floor] channel: 4993
 [programme_notifications.rooms.4993]
 webhook_id = "ROOM_4993"
 discord_channel_id = "1473687365477339362"
 
-
 # Palladium [2nd Floor] channel: 4995
 [programme_notifications.rooms.4995]
 webhook_id = "ROOM_4995"
 discord_channel_id = "1473687370233679975"
-
 
 # Ferrum [Ground Floor] channel: 4996
 [programme_notifications.rooms.4996]
 webhook_id = "ROOM_4996"
 discord_channel_id = "1473687374063075399"
 
-
 # Dynamicum [Ground Floor] channel: 4997
 [programme_notifications.rooms.4997]
 webhook_id = "ROOM_4997"
 discord_channel_id = "1473687379884638311"
-
 
 # OpenSpace Lounge [3rd Floor] channel: 4999
 [programme_notifications.rooms.4999]
