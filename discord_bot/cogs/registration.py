@@ -85,11 +85,11 @@ class RegistrationForm(discord.ui.Modal, title="Europython 2023 Registration"):
                 except discord.errors.Forbidden as ex:
                     msg = f"Changing nickname for {self.name} did not work: {ex}"
                     _logger.exception(msg)
-                    await log_to_channel(
-                        channel=interaction.client.get_channel(config.REG_LOG_CHANNEL_ID),
-                        interaction=interaction,
-                        error=ex,
-                    )
+                    # await log_to_channel(
+                    #     channel=interaction.client.get_channel(config.REG_LOG_CHANNEL_ID),
+                    #     interaction=interaction,
+                    #     error=ex,
+                    # )
                     changed_nickname = False
             await log_to_channel(
                 channel=interaction.client.get_channel(config.REG_LOG_CHANNEL_ID),
@@ -102,7 +102,7 @@ class RegistrationForm(discord.ui.Modal, title="Europython 2023 Registration"):
             # log the mapping of ticket to discord id to file
             await order_ins.log_ticket_and_discord_id_to_file(
                 discord_user_id=interaction.user.id,
-                ticket_id=self.order.value,
+                ticket_id=ticket_id,
             )
 
             msg = f"Thank you {self.name.value}, you are now registered!"
