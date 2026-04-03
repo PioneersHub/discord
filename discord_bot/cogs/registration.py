@@ -68,7 +68,7 @@ class RegistrationForm(discord.ui.Modal, title="Europython 2023 Registration"):
 
     async def on_submit(self, interaction: discord.Interaction) -> None:
         """Assign the role to the user and send a confirmation message."""
-        roles = await order_ins.get_roles(
+        roles, ticket_id = await order_ins.get_roles_and_ticket_id(
             name=self.name.value,
             order=self.order.value,
         )
@@ -96,6 +96,7 @@ class RegistrationForm(discord.ui.Modal, title="Europython 2023 Registration"):
                 interaction=interaction,
                 name=self.name.value,
                 order=self.order.value,
+                ticket_id=ticket_id,
                 roles=roles,
             )
             # log the mapping of ticket to discord id to file

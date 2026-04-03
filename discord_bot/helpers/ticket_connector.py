@@ -97,9 +97,10 @@ class TicketOrder(metaclass=Singleton):
 
         return data
 
-    async def get_roles(self, name: str, order: str) -> list[int]:
-        """Get the roles IDs for the user based on their ticket type."""
+    async def get_roles_and_ticket_id(self, name: str, order: str) -> tuple[list[int], str]:
+        """Get the roles IDs and ticket ID for the user based on their ticket type."""
         roles: list[int] = []
+        ticket_id: str = ""
         data = await self.get_ticket_type(full_name=name, order=order)
 
         if data:
@@ -117,11 +118,11 @@ class TicketOrder(metaclass=Singleton):
                 roles.append(self.config.ROLES["Remote"])  # Remote
             if data.get("is_onsite"):
                 roles.append(self.config.ROLES["On-Site"])  # On-Site
-            # TODO(dan): what about these?
-            # "is_guest"
-            # "online_access"
+            if data.get("ticket_id"):
+                ticket_id = data["ticket_id"]
+                _logger.info("Found ticket id %r for order %r and name %r", ticket_id, order, name)
 
-        return roles
+        return roles, ticket_id
 
     def validate_key(self, key: str) -> bool:
         """Validate the key for uniqueness."""
