@@ -68,7 +68,7 @@ def test_create_embed_from_session_information(session_factory):
             discord.Field(name="Duration", value="45 minutes", inline=True),
             discord.Field(
                 name="Livestream",
-                value="[Vimeo](https://vimeo-livestreams.com/best-conference-sessions-of-2023)",
+                value="[Video](https://vimeo-livestreams.com/best-conference-sessions-of-2023)",
                 inline=True,
             ),
             discord.Field(
@@ -471,7 +471,7 @@ def test_duration_is_displayed_correctly(
         ),
         pytest.param(
             yarl.URL("https://some.vimeo.stream.live/"),
-            "[Vimeo](https://some.vimeo.stream.live/)",
+            "[Video](https://some.vimeo.stream.live/)",
             id="Livestream URL is available",
         ),
     ],

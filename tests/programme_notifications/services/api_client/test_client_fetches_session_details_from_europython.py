@@ -44,15 +44,18 @@ async def test_api_client_returns_level_and_url_for_session(
     # client_session.get.return_value.__aenter__.return_value.json = mock.AsyncMock(
     #     return_value=json.loads(get_bytes_from_data_file(f"europython_{session_id}.testdata.json"))
     # )
+    answer_tag = '<span class="answer answer-strip-paragraph">'
+    return_value = (
+        f"bla bla Expected audience expertise in your talk's domain: {answer_tag}{expected_experience_level}</span> "
+        "bla bla"
+    )
     client_session.get.return_value.__aenter__.return_value.text = mock.AsyncMock(
-        return_value=f"bla bla Expected audience expertise: Domain: <p>{expected_experience_level}</p> bla bla",
+        return_value=return_value,
     )
     # AND a configuration repository with a pretalx schedule url
     config = configuration_factory(
         {
             "pretalx_talk_url": "https://2024.pycon.de/program/{code}",
-            # "conference_website_api_session_url": "https://2024.pycon.de/program/{code}",
-            # "conference_website_session_base_url": "https://2024.pycon.de/program/{slug}",
         }
     )
     # AND an api client with that session and configuration repository

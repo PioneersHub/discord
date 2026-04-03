@@ -47,9 +47,9 @@ class RegistrationPyData(Registration, commands.Cog):
         self._desc = (
             "Follow these steps to complete your registration:\n\n"
             f'1️⃣ Click on the green "Register Here {EMOJI_POINT}" button.\n\n'
-            '2️⃣ Fill in the "ticket/order ID" in the format "XXXXX", e.g. "AB1CD") and '
-            "your full name (as printed on your ticket PDF). The ticket/order ID can also be found on your ticket PDF."
-            "Trouble finding the infos? Check your emails from pydata25-tickets@pioneershub.org again."
+            '2️⃣ Fill in the "order ID" in the format "XXXXX", e.g. "AB1CD") and '
+            "your full name (as printed on your ticket PDF). The order ID can also be found on your ticket PDF. "
+            f"Trouble finding the infos? Check your emails from '{config.TICKET_EMAIL_ADDRESS}' again.\n\n"
             # "You can find the information also in your confirmation email from "
             # f'tickets@pydata-berlin.org with the subject: '
             # '"[Action required] Ticket for {config.CONFERENCE_NAME}".\n\n'

@@ -140,19 +140,20 @@ class ApiClient:
         :param code: The session identifier code, as used by pretalx
         :return: A tuple with the session slug and audience experience level
         """
-        website_base_url = self.config.pretalx_talk_url  # conference_website_session_base_url
+        website_base_url = self.config.pretalx_talk_url
         session_url = yarl.URL(website_base_url.format(code=code)) if code else None
 
         # there is no API so we crawl the website and search for the
         # 'Python Skill Level' text
-        api_base_url = self.config.pretalx_talk_url  # conference_website_api_session_url
+        api_base_url = self.config.pretalx_talk_url
         url = api_base_url.format(code=code)
         async with self.session.get(url=url, raise_for_status=True) as response:
             # session_information = await response.json()
             html = await response.text()
 
-        # Find the first occurrence of 'Expected audience expertise: Domain:' and then locate the first <p> tag after
-        keyword = "Expected audience expertise: Domain:"
+        # Find the first occurrence of 'Expected audience expertise in your talk's domain' and then locate the first
+        # <p> tag after
+        keyword = "Expected audience expertise in your talk's domain:"
 
         keyword_index = html.find(keyword)
         if keyword_index == -1:
@@ -162,14 +163,15 @@ class ApiClient:
         # Extract the portion of the HTML after 'Domain'
         html_after_keyword = html[keyword_index:]
 
-        # Find the first <p> tag and extract the value between <p> and </p>
-        start_p = html_after_keyword.find("<p>")
-        end_p = html_after_keyword.find("</p>", start_p)
-        if start_p == -1 or end_p == -1:
-            msg = f"Could not find a <p> tag after '{keyword}' in the HTML content."
+        # Find the first <span> answer class and extract the value between it and </span>
+        answer_tag = '<span class="answer answer-strip-paragraph">'
+        start_i = html_after_keyword.find(answer_tag)
+        end_i = html_after_keyword.find("</span>", start_i)
+        if start_i == -1 or end_i == -1:
+            msg = f"Could not find a <span> tag after '{keyword}' in the HTML content."
             raise ValueError(msg)
 
-        experience = html_after_keyword[start_p + 3 : end_p].strip()
+        experience = html_after_keyword[start_i + len(answer_tag) : end_i].strip()
 
         return session_url, experience
 

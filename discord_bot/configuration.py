@@ -6,7 +6,6 @@ This module provides:
 """
 
 import logging
-import os
 import sys
 from pathlib import Path
 
@@ -49,21 +48,17 @@ class Config(metaclass=Singleton):
             self.CONFERENCE_NAME = config["conference"]["CONFERENCE_NAME"]
             self.CONFERENCE_YEAR = config["conference"]["CONFERENCE_YEAR"]
             self.VOLUNTEER_SHIRT_COLOR = config["conference"].get("VOLUNTEER_SHIRT_COLOR", "volunteer")
+            self.TICKET_EMAIL_ADDRESS = config["conference"]["TICKET_EMAIL_ADDRESS"]
 
             self.GUILD = int(config["server"]["GUILD"])
 
-            # from the config.toml get all keys and values from the [roles] and [cole_colors] section
+            # from the config.toml get all keys and values from the [roles] and [role_colors] section
             self.ROLES = config["roles"]
             self.ROLE_COLORS = config["role_colors"]
             # self.ROLE_IDS = {role: int(role_id) for role, role_id in self.ROLES.items()}
 
             # Pytanis
             self.PRETALX_EVENT_NAME = config["pytanis"]["PRETALX_EVENT_NAME"]
-            # TODO(dan): not required anymore?
-            self.LIVESTREAMS_SHEET_ID = os.getenv("LIVESTREAMS_SHEET_ID", "")
-            self.LIVESTREAMS_WORKSHEET_NAME = os.getenv("LIVESTREAMS_WORKSHEET_NAME", "")
-            # self.LIVESTREAMS_SHEET_ID = config["pytanis"]["LIVESTREAMS_SHEET_ID"]
-            # self.LIVESTREAMS_WORKSHEET_NAME = config["pytanis"]["LIVESTREAMS_WORKSHEET_NAME"]
 
             self.CONFERENCE_AFTERNOON_SESSION_START_TIME = config["programme_notifications"][
                 "conference_afternoon_session_start_time"

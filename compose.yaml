@@ -15,6 +15,10 @@ services:
         target: /home/bot/registered_log.txt
         read_only: false
       - type: bind
+        source: /home/bot/discord_ticket_log.txt
+        target: /home/bot/discord_ticket_log.txt
+        read_only: false
+      - type: bind
         source: /home/bot/posted_jobs.txt
         target: /home/bot/posted_jobs.txt
         read_only: false

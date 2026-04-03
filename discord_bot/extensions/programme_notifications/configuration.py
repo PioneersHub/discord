@@ -34,7 +34,6 @@ class RoomConfiguration:
 
     discord_channel_id: str = attrs.field(validator=validators.matches_re(r"\d+"))
     webhook_id: str
-    # livestreams: Mapping[str, str]
 
 
 @attrs.define(frozen=True)
@@ -62,6 +61,7 @@ class NotifierConfiguration:
     rooms: Mapping[str, RoomConfiguration]
     webhooks: Mapping[str, yarl.URL] = attrs.field(repr=False, validator=_URL_MAPPING)
     timewarp: bool = attrs.field(validator=_INSTANCE_OF_BOOL, default=False)
+    timewarp_time: str = attrs.field(validator=_INSTANCE_OF_STR, default="")
 
     @classmethod
     def from_environment(cls, config: configuration.Config) -> NotifierConfiguration:

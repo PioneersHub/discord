@@ -1,21 +1,22 @@
 [conference]
-CONFERENCE_NAME = "PyData Berlin 2025"
-CONFERENCE_WEBSITE = "https://pydata.org/berlin2025/"
-CONFERENCE_YEAR = 2025
-VOLUNTEER_SHIRT_COLOR = "green"
+CONFERENCE_NAME = "PyCon DE & PyData 2026"
+CONFERENCE_WEBSITE = "https://2026.pycon.de/"
+CONFERENCE_YEAR = 2026
+VOLUNTEER_SHIRT_COLOR = "blue-grey"
+TICKET_EMAIL_ADDRESS="tickets26@pycon.de"
 
 [server]
-GUILD = 1340999177139650561
+GUILD = 955933777706762280
 CONFERENCE_SETUP_DONE = true
 
 [pytanis]
-PRETALX_EVENT_NAME = "berlin2025"
+PRETALX_EVENT_NAME = "pyconde-pydata-2026"
 
 [logging]
 LOG_LEVEL = "INFO"
 
 # =====
-# used by discord_bot/conference_setup.py script. [role_colors] must match the values in [roles]
+# used by discord_bot/conference_setup.py script. [role_colors] keys must match the keys in [roles]
 [role_colors]
 Organiser = "#ff9b00"  # orange
 Volunteer = "#fac800"  # yellow
@@ -29,64 +30,90 @@ Remote = "#96dc00"  # light green
 # =====
 # fill by running discord_bot/conference_setup.py
 [roles]
-Organiser = 1386648341777092702
-Volunteer = 1386648343567929426
-Attendee = 1386648344721489970
-Speaker = 1386648345547771905
-Session-Chair = 1386648347414233198
-Sponsor = 1386648348647227453
-On-Site = 1386648350270685246
-Remote = 1386648351813926912
+Organiser = 1362862779173961919
+Volunteer = 1472973854820536484
+Attendee = 1472973856217235619
+Speaker = 1472973857055969295
+Session-Chair = 1472973858469449931
+Sponsor = 1472973859534803107
+On-Site = 1473066851658498140
+Remote = 1472973860403024044
 
 [registration]
-REG_CHANNEL_ID = 1394333955683123270
-REG_HELP_CHANNEL_ID = 1394333957457317900
+REG_CHANNEL_ID = 1473207660978376775
+REG_HELP_CHANNEL_ID = 1473207662148583548
 # =====
-REG_LOG_CHANNEL_ID = 1394333364538052618
+REG_LOG_CHANNEL_ID = 1216373483114598491
 
 
 [job_board]
-JOB_BOARD_CHANNEL_ID = 1410336053197279303
+JOB_BOARD_CHANNEL_ID = 1473687386746654904
 JOB_BOARD_TESTING = false
 
 [tickets]
-TICKETS_BASE_URL="https://val.pydata-berlin.org"
+TICKETS_BASE_URL="https://val.pycon.de"
 TICKETS_REFRESH_ROUTE="/tickets/refresh_all/"
 TICKETS_VALIDATION_ROUTE="/tickets/validate_attendee/"
 
 [programme_notifications]
 timezone = "Europe/Berlin"
 timewarp = false  # true for testing
-conference_days_first = "2025-09-01"
-conference_days_last = "2025-09-03"
+# general programme notifications are send 5 minutes before the session, and
+# room notifications are send 2 minutes before the session
+# timewarp_time = "2026-04-14T10:24:50+02:00"  # keynote program notification
+timewarp_time = "2026-04-14T11:39:50+02:00"  # room notification
+conference_days_first = "2026-04-14"
+conference_days_last = "2026-04-16"
 conference_afternoon_session_start_time = 13
-# pretalx_event_name = "berlin2025"
-pretalx_schedule_url = "https://pretalx.com/api/events/berlin2025/schedules/latest/?expand=slots,slots.room,slots.submission,slots.submission.speakers,slots.submission.submission_type,slots.submission.track"
-pretalx_talk_url = "https://cfp.pydata.org/berlin2025/talk/{code}"
-# conference_website_session_base_url = "https://2025.pycon.de/program/{slug}"
-# conference_website_api_session_url = "https://2025.pycon.de/program/{code}"
-video_url = "https://videos.pydata-berlin.org"
+pretalx_schedule_url = "https://pretalx.com/api/events/pyconde-pydata-2026/schedules/latest/?expand=slots,slots.room,slots.submission,slots.submission.speakers,slots.submission.submission_type,slots.submission.track"
+pretalx_talk_url = "https://pretalx.com/pyconde-pydata-2026/talk/{code}"
+video_url = "https://talks.pycon.de/"
 
 [[programme_notifications.notification_channels]]
 webhook_id = "PROGRAMME_NOTIFICATIONS"
 include_channel_in_embeds = true
 
-# Kuppelsaal channel: 4560
-[programme_notifications.rooms.4560]
-webhook_id = "ROOM_4560"
-discord_channel_id = "1394335693916082409"
+# Merck Plenary (Spectrum) channel: 4989
+[programme_notifications.rooms.4989]
+webhook_id = "ROOM_4989"
+discord_channel_id = "1488998557603074118"
 
-# B09 channel: 4561
-[programme_notifications.rooms.4561]
-webhook_id = "ROOM_4561"
-discord_channel_id = "1394335699158827059"
+# Titanium [2nd Floor] channel: 4990
+[programme_notifications.rooms.4990]
+webhook_id = "ROOM_4990"
+discord_channel_id = "1473687352655479007"
 
-# B07-B08 channel: 4562
-[programme_notifications.rooms.4562]
-webhook_id = "ROOM_4562"
-discord_channel_id = "1394335703453667541"
+# Helium [3rd Floor] channel: 4991
+[programme_notifications.rooms.4991]
+webhook_id = "ROOM_4991"
+discord_channel_id = "1473687356652654623"
 
-# B05-B06 channel: 4563
-[programme_notifications.rooms.4563]
-webhook_id = "ROOM_4563"
-discord_channel_id = "1394335707191050353"
+# Platinum [2nd Floor] channel: 4992
+[programme_notifications.rooms.4992]
+webhook_id = "ROOM_4992"
+discord_channel_id = "1473687362147188909"
+
+# Europium [3rd Floor] channel: 4993
+[programme_notifications.rooms.4993]
+webhook_id = "ROOM_4993"
+discord_channel_id = "1473687365477339362"
+
+# Palladium [2nd Floor] channel: 4995
+[programme_notifications.rooms.4995]
+webhook_id = "ROOM_4995"
+discord_channel_id = "1473687370233679975"
+
+# Ferrum [Ground Floor] channel: 4996
+[programme_notifications.rooms.4996]
+webhook_id = "ROOM_4996"
+discord_channel_id = "1473687374063075399"
+
+# Dynamicum [Ground Floor] channel: 4997
+[programme_notifications.rooms.4997]
+webhook_id = "ROOM_4997"
+discord_channel_id = "1473687379884638311"
+
+# OpenSpace Lounge [3rd Floor] channel: 4999
+[programme_notifications.rooms.4999]
+webhook_id = "ROOM_4999"
+discord_channel_id = "1473687383424634880"

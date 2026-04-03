@@ -76,5 +76,12 @@
         owner: bot
         group: bot
 
+    - name: Create discord_ticket_log.txt in bot's home directory
+      file:
+        path: /home/bot/discord_ticket_log.txt
+        state: touch
+        owner: bot
+        group: bot
+
     - name: Start DiscordBot
       shell: "cd /root/discord && docker compose down && docker compose up --detach --build"
