@@ -75,6 +75,9 @@ class Config(metaclass=Singleton):
                 self.TICKETS_BASE_URL = config["tickets"]["TICKETS_BASE_URL"]
                 self.TICKETS_REFRESH_ROUTE = config["tickets"]["TICKETS_REFRESH_ROUTE"]
                 self.TICKETS_VALIDATION_ROUTE = config["tickets"]["TICKETS_VALIDATION_ROUTE"]
+                self.TICKETS_OAUTH2_CLIENT_ID = config["tickets"].get("TICKETS_OAUTH2_CLIENT_ID", "")
+                self.TICKETS_OAUTH2_CLIENT_SECRET = config["tickets"].get("TICKETS_OAUTH2_CLIENT_SECRET", "")
+                self.TICKETS_OAUTH2_TOKEN_URL = config["tickets"].get("TICKETS_OAUTH2_TOKEN_URL", "")
 
                 # Job Board
                 self.JOB_BOARD_CHANNEL_ID = config["job_board"]["JOB_BOARD_CHANNEL_ID"]

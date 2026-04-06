@@ -54,6 +54,11 @@ JOB_BOARD_TESTING = false
 TICKETS_BASE_URL="https://val.pycon.de"
 TICKETS_REFRESH_ROUTE="/tickets/refresh_all/"
 TICKETS_VALIDATION_ROUTE="/tickets/validate_attendee/"
+# Optional OAuth2 client credentials for ticket API.
+# Leave empty to disable OAuth2 authentication.
+TICKETS_OAUTH2_CLIENT_ID = ""
+TICKETS_OAUTH2_CLIENT_SECRET = ""
+TICKETS_OAUTH2_TOKEN_URL = ""
 
 [programme_notifications]
 timezone = "Europe/Berlin"
