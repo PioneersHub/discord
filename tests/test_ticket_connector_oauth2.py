@@ -15,9 +15,9 @@ from discord_bot.helpers.ticket_connector import TicketOrder
 
 
 class _FakeResponse:
-    def __init__(self, status: int, json_payload: dict | None = None, text_payload: str = "") -> None:
+    def __init__(self, status: int, json_payload: object = None, text_payload: str = "") -> None:
         self.status = status
-        self._json_payload = json_payload or {}
+        self._json_payload = {} if json_payload is None else json_payload
         self._text_payload = text_payload
 
     async def __aenter__(self) -> _FakeResponse:
@@ -31,7 +31,7 @@ class _FakeResponse:
     ) -> bool:
         return False
 
-    async def json(self) -> dict:
+    async def json(self) -> object:
         await asyncio.sleep(0)
         return self._json_payload
 
@@ -44,6 +44,7 @@ class _FakeSession:
     def __init__(self, response: _FakeResponse) -> None:
         self.response = response
         self.post_calls: list[dict[str, object]] = []
+        self.get_calls: list[dict[str, object]] = []
 
     async def __aenter__(self) -> _FakeSession:
         return self
@@ -58,6 +59,10 @@ class _FakeSession:
 
     def post(self, url: str, **kwargs: object) -> _FakeResponse:
         self.post_calls.append({"url": url, "kwargs": kwargs})
+        return self.response
+
+    def get(self, url: str, **kwargs: object) -> _FakeResponse:
+        self.get_calls.append({"url": url, "kwargs": kwargs})
         return self.response
 
 
@@ -136,3 +141,61 @@ async def test_ticket_validation_skips_call_when_token_unavailable(monkeypatch: 
 
     assert data is None
     session_factory.assert_not_called()
+
+
+@pytest.mark.asyncio
+async def test_ticket_refresh_includes_bearer_header(monkeypatch: pytest.MonkeyPatch) -> None:
+    """Refresh API calls include Authorization when OAuth2 is enabled."""
+    monkeypatch.setenv("TICKETS_OAUTH2_CLIENT_ID", "client")
+    monkeypatch.setenv("TICKETS_OAUTH2_CLIENT_SECRET", "secret")
+    monkeypatch.setenv("TICKETS_OAUTH2_TOKEN_URL", "https://idp.example.com/token")
+
+    order = TicketOrder()
+    monkeypatch.setattr(order, "_get_oauth2_token", mock.AsyncMock(return_value="tok-123"))
+
+    fake_session = _FakeSession(response=_FakeResponse(status=HTTPStatus.OK))
+    monkeypatch.setattr(ticket_connector.aiohttp, "ClientSession", mock.Mock(return_value=fake_session))
+
+    result = await order._update_tickets("https://val.example.com/tickets/refresh_all/")
+
+    assert result is True
+    assert len(fake_session.get_calls) == 1
+    headers = fake_session.get_calls[0]["kwargs"]["headers"]
+    assert isinstance(headers, dict)
+    assert headers["Authorization"] == "Bearer tok-123"
+
+
+@pytest.mark.asyncio
+async def test_ticket_refresh_skips_call_when_token_unavailable(monkeypatch: pytest.MonkeyPatch) -> None:
+    """If OAuth2 is configured but no token is available, the refresh call is skipped."""
+    monkeypatch.setenv("TICKETS_OAUTH2_CLIENT_ID", "client")
+    monkeypatch.setenv("TICKETS_OAUTH2_CLIENT_SECRET", "secret")
+    monkeypatch.setenv("TICKETS_OAUTH2_TOKEN_URL", "https://idp.example.com/token")
+
+    order = TicketOrder()
+    monkeypatch.setattr(order, "_get_oauth2_token", mock.AsyncMock(return_value=None))
+
+    session_factory = mock.Mock()
+    monkeypatch.setattr(ticket_connector.aiohttp, "ClientSession", session_factory)
+
+    result = await order._update_tickets("https://val.example.com/tickets/refresh_all/")
+
+    assert result is False
+    session_factory.assert_not_called()
+
+
+@pytest.mark.asyncio
+async def test_fetch_oauth2_token_rejects_non_dict_response(monkeypatch: pytest.MonkeyPatch) -> None:
+    """A JSON body that is not an object is rejected instead of raising AttributeError."""
+    monkeypatch.setenv("TICKETS_OAUTH2_CLIENT_ID", "client")
+    monkeypatch.setenv("TICKETS_OAUTH2_CLIENT_SECRET", "secret")
+    monkeypatch.setenv("TICKETS_OAUTH2_TOKEN_URL", "https://idp.example.com/token")
+
+    order = TicketOrder()
+
+    fake_session = _FakeSession(response=_FakeResponse(status=HTTPStatus.OK, json_payload=["unexpected"]))
+    monkeypatch.setattr(ticket_connector.aiohttp, "ClientSession", mock.Mock(return_value=fake_session))
+
+    result = await order._fetch_oauth2_token()
+
+    assert result is None

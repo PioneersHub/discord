@@ -54,7 +54,7 @@ PRETIX_TOKEN=<PretixStagingToken_from_1Password>
 # Optional: required when ticket validation API enforces OAuth2
 TICKETS_OAUTH2_CLIENT_ID=<OAuth2ClientId>
 TICKETS_OAUTH2_CLIENT_SECRET=<OAuth2ClientSecret>
-TICKETS_OAUTH2_TOKEN_URL=<https://your-idp.example.com/realms/<realm>/protocol/openid-connect/token>
+TICKETS_OAUTH2_TOKEN_URL=https://keycloak.example.com/realms/your-realm/protocol/openid-connect/token
 ```
 
 After you have added the `.secrets` file, you can run the bot with the following command:

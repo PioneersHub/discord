@@ -104,6 +104,10 @@ class TicketOrder(metaclass=Singleton):
             _logger.exception("Error occurred while fetching OAuth2 token from %r", self.TICKETS_OAUTH2_TOKEN_URL)
             return None
 
+        if not isinstance(data, dict):
+            _logger.error("OAuth2 token response is not a JSON object: %r", type(data).__name__)
+            return None
+
         access_token = data.get("access_token")
         if not access_token:
             _logger.error("OAuth2 token response does not contain an access token")
