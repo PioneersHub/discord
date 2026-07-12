@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 
+import asyncio
 import logging
+import os
 from http import HTTPStatus
 from pathlib import Path
-from time import time
+from time import monotonic, time
 
 import aiofiles
 import aiohttp
@@ -16,6 +18,7 @@ from discord_bot.configuration import Config, Singleton
 from discord_bot.error import AlreadyRegisteredError, NotFoundError
 
 _logger = logging.getLogger(f"bot.{__name__}")
+_TOKEN_EXPIRY_MARGIN_SECONDS = 30
 
 
 def sanitize_string(input_string: str) -> str:
@@ -30,8 +33,19 @@ class TicketOrder(metaclass=Singleton):
         """Initialize the TicketOrder class."""
         self.config = Config()
         load_dotenv(Path(__file__).resolve().parent.parent.parent / ".secrets")
-        # PRETIX_TOKEN = os.getenv("PRETIX_TOKEN")
-        self.HEADERS = {"Content-Type": "application/json"}  # {"Authorization": f"Token {PRETIX_TOKEN}"}
+        self.HEADERS = {"Content-Type": "application/json"}
+        self.TICKETS_OAUTH2_CLIENT_ID = os.getenv(
+            "TICKETS_OAUTH2_CLIENT_ID", getattr(self.config, "TICKETS_OAUTH2_CLIENT_ID", "")
+        )
+        self.TICKETS_OAUTH2_CLIENT_SECRET = os.getenv(
+            "TICKETS_OAUTH2_CLIENT_SECRET", getattr(self.config, "TICKETS_OAUTH2_CLIENT_SECRET", "")
+        )
+        self.TICKETS_OAUTH2_TOKEN_URL = os.getenv(
+            "TICKETS_OAUTH2_TOKEN_URL", getattr(self.config, "TICKETS_OAUTH2_TOKEN_URL", "")
+        )
+        self._oauth2_token: str | None = None
+        self._oauth2_token_expires_at: float = 0.0
+        self._oauth2_token_lock = asyncio.Lock()
 
         self.id_to_name = None
         self.orders = {}
@@ -57,8 +71,90 @@ class TicketOrder(metaclass=Singleton):
         await self._update_tickets(f"{self.config.TICKETS_BASE_URL}{self.config.TICKETS_REFRESH_ROUTE}")
         _logger.info("Updated tickets from %r in %r seconds", self.config.TICKETS_BASE_URL, time() - time_start)
 
+    def _oauth2_is_enabled(self) -> bool:
+        """Check whether OAuth2 client credentials are configured."""
+        return bool(
+            self.TICKETS_OAUTH2_CLIENT_ID and self.TICKETS_OAUTH2_CLIENT_SECRET and self.TICKETS_OAUTH2_TOKEN_URL
+        )
+
+    async def _fetch_oauth2_token(self) -> tuple[str, float] | None:
+        """Fetch an OAuth2 access token and compute its expiry time."""
+        try:
+            async with aiohttp.ClientSession() as session, session.post(
+                self.TICKETS_OAUTH2_TOKEN_URL,
+                data={
+                    "grant_type": "client_credentials",
+                    "client_id": self.TICKETS_OAUTH2_CLIENT_ID,
+                    "client_secret": self.TICKETS_OAUTH2_CLIENT_SECRET,
+                },
+                headers={"Content-Type": "application/x-www-form-urlencoded"},
+            ) as response:
+                if response.status != HTTPStatus.OK:
+                    response_text = await response.text()
+                    _logger.error(
+                        "Failed to fetch OAuth2 token from %r: status=%r, response=%r",
+                        self.TICKETS_OAUTH2_TOKEN_URL,
+                        response.status,
+                        response_text,
+                    )
+                    return None
+
+                data = await response.json()
+        except (aiohttp.ClientError, ValueError):
+            _logger.exception("Error occurred while fetching OAuth2 token from %r", self.TICKETS_OAUTH2_TOKEN_URL)
+            return None
+
+        if not isinstance(data, dict):
+            _logger.error("OAuth2 token response is not a JSON object: %r", type(data).__name__)
+            return None
+
+        access_token = data.get("access_token")
+        if not access_token:
+            _logger.error("OAuth2 token response does not contain an access token")
+            return None
+
+        try:
+            expires_in_seconds = int(data.get("expires_in", 300))
+        except (TypeError, ValueError):
+            _logger.exception("Invalid expires_in value in OAuth2 token response: %r", data.get("expires_in"))
+            expires_in_seconds = 300
+
+        expires_at = monotonic() + max(expires_in_seconds - _TOKEN_EXPIRY_MARGIN_SECONDS, 0)
+        return access_token, expires_at
+
+    async def _get_oauth2_token(self) -> str | None:
+        """Get a cached OAuth2 access token or fetch a new one."""
+        if not self._oauth2_is_enabled():
+            return None
+
+        async with self._oauth2_token_lock:
+            if self._oauth2_token and monotonic() < self._oauth2_token_expires_at:
+                return self._oauth2_token
+
+            token_data = await self._fetch_oauth2_token()
+            if not token_data:
+                self._oauth2_token = None
+                self._oauth2_token_expires_at = 0.0
+                return None
+
+            self._oauth2_token, self._oauth2_token_expires_at = token_data
+            return self._oauth2_token
+
+    async def _build_headers(self) -> dict[str, str]:
+        """Build request headers, adding OAuth2 authorization when enabled."""
+        headers = dict(self.HEADERS)
+        token = await self._get_oauth2_token()
+        if token:
+            headers["Authorization"] = f"Bearer {token}"
+        return headers
+
     async def _update_tickets(self, url: str) -> bool:
-        async with aiohttp.ClientSession() as session, session.get(url, headers=self.HEADERS) as response:
+        headers = await self._build_headers()
+        if self._oauth2_is_enabled() and "Authorization" not in headers:
+            _logger.error("Skipping ticket refresh because OAuth2 token could not be obtained")
+            return False
+
+        async with aiohttp.ClientSession() as session, session.get(url, headers=headers) as response:
             if response.status == HTTPStatus.OK:
                 return True
         _logger.error("Error occurred while updating Ticket API: Status %r", response.status)
@@ -69,10 +165,14 @@ class TicketOrder(metaclass=Singleton):
         key = f"{order}-{sanitize_string(input_string=full_name)}"
         self.validate_key(key)
         data = None
+        headers = await self._build_headers()
+        if self._oauth2_is_enabled() and "Authorization" not in headers:
+            _logger.error("Skipping ticket validation because OAuth2 token could not be obtained")
+            return None
 
         async with aiohttp.ClientSession() as session, session.post(
             f"{self.config.TICKETS_BASE_URL}{self.config.TICKETS_VALIDATION_ROUTE}",
-            headers=self.HEADERS,
+            headers=headers,
             json={"order_id": order, "name": full_name},
         ) as request:
             if request.status == HTTPStatus.OK:
