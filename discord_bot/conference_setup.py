@@ -187,15 +187,15 @@ class ConferenceSetup:
                 topic=topic,
             )
         # remote attendee text and voice channels
-        await self.guild.create_text_channel(
-            name="remote-attendees",
-            category=discord.utils.get(self.guild.categories, name=self.category_names["CONFERENCE"]),
-            topic="Remote attendees can use this channel to connect with each other.",
-        )
-        await self.guild.create_voice_channel(
-            name="remote-attendees-voice",
-            category=discord.utils.get(self.guild.categories, name=self.category_names["CONFERENCE"]),
-        )
+        # await self.guild.create_text_channel(
+        #     name="remote-attendees",
+        #     category=discord.utils.get(self.guild.categories, name=self.category_names["CONFERENCE"]),
+        #     topic="Remote attendees can use this channel to connect with each other.",
+        # )
+        # await self.guild.create_voice_channel(
+        #     name="remote-attendees-voice",
+        #     category=discord.utils.get(self.guild.categories, name=self.category_names["CONFERENCE"]),
+        # )
         # restricted channels: channel name, description (topic), and conference roles that should not see the channel
         restricted_channels = [
             (
