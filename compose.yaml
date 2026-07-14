@@ -1,29 +1,17 @@
 services:
   DiscordBot:
-    image: discordbot
     build:
       context: .
-      args:
-        - --no-cache
+      platforms:
+        - linux/amd64
+    image: ${IMAGE_NAME:-discordbot-euroscipy}:${IMAGE_TAG:-latest}
+    container_name: ${CONTAINER_NAME:-discordbot-euroscipy}
     volumes:
-      - type: bind
-        source: /etc/discord/discord_bot/.secrets
-        target: /home/bot/.secrets
-        read_only: true
-      - type: bind
-        source: /home/bot/registered_log.txt
-        target: /home/bot/registered_log.txt
-        read_only: false
-      - type: bind
-        source: /home/bot/discord_ticket_log.txt
-        target: /home/bot/discord_ticket_log.txt
-        read_only: false
-      - type: bind
-        source: /home/bot/posted_jobs.txt
-        target: /home/bot/posted_jobs.txt
-        read_only: false
-    # read all container only logs with
-    # journalctl -u docker IMAGE_NAME=discordbot -f
+      - ./.secrets:/home/bot/.secrets:ro
+      - ./config.toml:/home/bot/discord_bot/config.toml:ro
+      - ./registered_log.txt:/home/bot/registered_log.txt
+      - ./discord_ticket_log.txt:/home/bot/discord_ticket_log.txt
+      - ./posted_jobs.txt:/home/bot/posted_jobs.txt
     logging:
       driver: journald
     restart: unless-stopped
