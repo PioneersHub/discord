@@ -22,10 +22,7 @@ _logger.addHandler(console_handler)
 load_dotenv(Path(__file__).resolve().parent.parent / ".secrets")
 DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN", "")
 
-intents = discord.Intents.all()
-intents.guilds = True
-intents.guild_messages = True
-intents.guild_reactions = True
+intents = discord.Intents.default()
 client = discord.Client(intents=intents)
 
 

@@ -69,12 +69,9 @@ def _setup_logging() -> None:
 
 def _get_intents() -> discord.Intents:
     """Get the desired intents for the bot."""
-    intents = discord.Intents.all()
-    intents.presences = False
-    intents.dm_typing = False
-    intents.dm_reactions = False
-    intents.invites = False
-    intents.integrations = False
+    intents = discord.Intents.default()
+    intents.members = True
+    intents.message_content = True
     return intents
 
 
