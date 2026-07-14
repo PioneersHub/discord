@@ -7,7 +7,7 @@ from pathlib import Path
 
 import discord
 from dotenv import load_dotenv
-from pytanis import GSheetsClient, PretalxClient
+from pytanis import PretalxClient
 
 from discord_bot import configuration
 
@@ -35,7 +35,7 @@ class ConferenceSetup:
     def __init__(self, config: configuration.Config) -> None:
         """Initialize the ConferenceSetup class."""
         self.pretalx_client = PretalxClient()
-        self.gsheets_client = GSheetsClient()
+        # self.gsheets_client = GSheetsClient()
         self.guild: discord.Guild = client.get_guild(config.GUILD)  # pyright: ignore[reportAttributeAccessIssue] # type: ignore: PGH003
         if self.guild is None:
             msg = "Guild not found. Check the GUILD ID in the config."
