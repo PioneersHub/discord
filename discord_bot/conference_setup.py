@@ -177,7 +177,7 @@ class ConferenceSetup:
             ("slides", "Slides from the conference can be posted here. Please also add your slides to pretalx."),
             ("feedback", "Do you have feedback for the conference? Post it here!"),
             ("social", "Off-topic discussions, plan dinner meetings, and other fun stuff."),
-            ("pyladies", "Pyladies channel for all Pyladies attendees."),
+            # ("pyladies", "Pyladies channel for all Pyladies attendees."),
         ]
 
         for name, topic in conference_channels:
