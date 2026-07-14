@@ -214,10 +214,10 @@ class TicketOrder(metaclass=Singleton):
                 roles.append(self.config.ROLES["Organiser"])  # Organiser
             if data.get("is_volunteer"):
                 roles.append(self.config.ROLES["Volunteer"])  # Volunteer
-            if data.get("is_remote"):
-                roles.append(self.config.ROLES["Remote"])  # Remote
-            if data.get("is_onsite"):
-                roles.append(self.config.ROLES["On-Site"])  # On-Site
+            # if data.get("is_remote"):
+            #     roles.append(self.config.ROLES["Remote"])  # Remote
+            # if data.get("is_onsite"):
+            #     roles.append(self.config.ROLES["On-Site"])  # On-Site
             if data.get("ticket_id"):
                 ticket_id = data["ticket_id"]
                 _logger.info("Found ticket id %r for order %r and name %r", ticket_id, order, name)

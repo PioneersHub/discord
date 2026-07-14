@@ -37,8 +37,8 @@ class Admin(commands.Cog):
         embed.add_field(name="Speaker", value=counts.speaker, inline=False)
         embed.add_field(name="Session-Chair", value=counts.session_chair, inline=False)
         embed.add_field(name="Sponsor", value=counts.sponsor, inline=False)
-        embed.add_field(name="On-Site", value=counts.on_site, inline=False)
-        embed.add_field(name="Remote", value=counts.remote, inline=False)
+        # embed.add_field(name="On-Site", value=counts.on_site, inline=False)
+        # embed.add_field(name="Remote", value=counts.remote, inline=False)
 
         await ctx.send(embed=embed)
 
@@ -97,5 +97,5 @@ class _RoleCount:
     speaker: int
     session_chair: int
     sponsor: int
-    on_site: int
-    remote: int
+    # on_site: int
+    # remote: int

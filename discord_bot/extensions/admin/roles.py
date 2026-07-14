@@ -13,5 +13,5 @@ class Roles:
     speaker: int
     session_chair: int
     sponsor: int
-    on_site: int
-    remote: int
+    # on_site: int
+    # remote: int
