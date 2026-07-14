@@ -211,7 +211,7 @@ class ConferenceSetup:
                 },
             ),
             (
-                "voltuneers",
+                "volunteers",
                 "This is the volunteer lounge. Only volunteers and organisers can see this channel.",
                 {
                     "Organiser": True,
