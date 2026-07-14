@@ -1,16 +1,16 @@
 [conference]
-CONFERENCE_NAME = "PyCon DE & PyData 2026"
-CONFERENCE_WEBSITE = "https://2026.pycon.de/"
+CONFERENCE_NAME = "EuroSciPy 2026"
+CONFERENCE_WEBSITE = "https://euroscipy.org"
 CONFERENCE_YEAR = 2026
 VOLUNTEER_SHIRT_COLOR = "blue-grey"
-TICKET_EMAIL_ADDRESS="tickets26@pycon.de"
+TICKET_EMAIL_ADDRESS = "info@euroscipy.org"
 
 [server]
-GUILD = 955933777706762280
+GUILD = 1514299760767537202
 CONFERENCE_SETUP_DONE = true
 
 [pytanis]
-PRETALX_EVENT_NAME = "pyconde-pydata-2026"
+PRETALX_EVENT_NAME = "euroscipy-2026"
 
 [logging]
 LOG_LEVEL = "INFO"
@@ -18,107 +18,84 @@ LOG_LEVEL = "INFO"
 # =====
 # used by discord_bot/conference_setup.py script. [role_colors] keys must match the keys in [roles]
 [role_colors]
-Organiser = "#ff9b00"  # orange
-Volunteer = "#fac800"  # yellow
-Attendee = "#3778be"  # blue
-Speaker = "#00c8e1"  # mid blue
-Session-Chair = "#a2d9ef"  # light blue
-Sponsor = "#e199c3"  # light pink
-On-Site = "#00aa41"  # green
-Remote = "#96dc00"  # light green
+Organiser = "#ff9b00"     # orange
+Volunteer = "#fac800"     # yellow
+Attendee = "#3778be"      # blue
+Speaker = "#00c8e1"       # mid blue
+Session-Chair = "#a2d9ef" # light blue
+Sponsor = "#e199c3"       # light pink
 
 # =====
 # fill by running discord_bot/conference_setup.py
 [roles]
-Organiser = 1362862779173961919
-Volunteer = 1472973854820536484
-Attendee = 1472973856217235619
-Speaker = 1472973857055969295
-Session-Chair = 1472973858469449931
-Sponsor = 1472973859534803107
-On-Site = 1473066851658498140
-Remote = 1472973860403024044
+Organiser = 1520723866270302318
+Volunteer = 1520724137050640554
+Attendee = 1520727548437467156
+Speaker = 1526561445729276057
+Session-Chair = 1526563796687130674
+Sponsor = 1526561696464765049
 
 [registration]
-REG_CHANNEL_ID = 1473207660978376775
-REG_HELP_CHANNEL_ID = 1473207662148583548
-# =====
-REG_LOG_CHANNEL_ID = 1216373483114598491
+REG_CHANNEL_ID = 1526569799264768030
+REG_HELP_CHANNEL_ID = 1526569800753483808
+REG_LOG_CHANNEL_ID = 1526678643755974686
 
 
 [job_board]
-JOB_BOARD_CHANNEL_ID = 1473687386746654904
+JOB_BOARD_CHANNEL_ID = 1526569844655525909
 JOB_BOARD_TESTING = false
 
 [tickets]
-TICKETS_BASE_URL="https://val.pycon.de"
-TICKETS_REFRESH_ROUTE="/tickets/refresh_all/"
-TICKETS_VALIDATION_ROUTE="/tickets/validate_attendee/"
-# Optional OAuth2 client credentials for ticket API.
-# Leave empty to disable OAuth2 authentication.
-TICKETS_OAUTH2_CLIENT_ID = ""
-TICKETS_OAUTH2_CLIENT_SECRET = ""
-TICKETS_OAUTH2_TOKEN_URL = ""
+TICKETS_BASE_URL = "https://tickets.pysv.org"
+TICKETS_REFRESH_ROUTE = "/tickets/refresh_all/"
+TICKETS_VALIDATION_ROUTE = "/tickets/validate_attendee/"
+TICKETS_OAUTH2_CLIENT_ID = "discord-bot"
+TICKETS_OAUTH2_CLIENT_SECRET = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+TICKETS_OAUTH2_TOKEN_URL = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
 [programme_notifications]
 timezone = "Europe/Berlin"
-timewarp = false  # true for testing
+timewarp = false
 # general programme notifications are send 5 minutes before the session, and
 # room notifications are send 2 minutes before the session
-# timewarp_time = "2026-04-14T10:24:50+02:00"  # keynote program notification
-timewarp_time = "2026-04-14T11:39:50+02:00"  # room notification
-conference_days_first = "2026-04-14"
-conference_days_last = "2026-04-16"
+timewarp_time = "2026-07-18T11:39:50+02:00"                                                                                                                                                                         # room notification
+conference_days_first = "2026-07-18"
+conference_days_last = "2026-07-23"
 conference_afternoon_session_start_time = 13
-pretalx_schedule_url = "https://pretalx.com/api/events/pyconde-pydata-2026/schedules/latest/?expand=slots,slots.room,slots.submission,slots.submission.speakers,slots.submission.submission_type,slots.submission.track"
-pretalx_talk_url = "https://pretalx.com/pyconde-pydata-2026/talk/{code}"
-video_url = "https://talks.pycon.de"
+pretalx_schedule_url = "https://pretalx.com/api/events/euroscipy-2026/schedules/latest/?expand=slots,slots.room,slots.submission,slots.submission.speakers,slots.submission.submission_type,slots.submission.track"
+pretalx_talk_url = "https://pretalx.com/euroscipy-2026/talk/{code}"
+video_url = "https://euroscipy.org"
 
 [[programme_notifications.notification_channels]]
 webhook_id = "PROGRAMME_NOTIFICATIONS"
 include_channel_in_embeds = true
 
-# Merck Plenary (Spectrum) channel: 4989
-[programme_notifications.rooms.4989]
-webhook_id = "ROOM_4989"
-discord_channel_id = "1488998557603074118"
+# Room 1.38 (Ground Floor, Turing) channel: 5298
+[programme_notifications.rooms.5298]
+webhook_id = "ROOM_5298"
+discord_channel_id = "1526569821762752643"
 
-# Titanium [2nd Floor] channel: 4990
-[programme_notifications.rooms.4990]
-webhook_id = "ROOM_4990"
-discord_channel_id = "1473687352655479007"
+# Room 1.19 (Ground Floor, Shannon) channel: 5299
+[programme_notifications.rooms.5299]
+webhook_id = "ROOM_5299"
+discord_channel_id = "1526569826485538948"
 
-# Helium [3rd Floor] channel: 4991
-[programme_notifications.rooms.4991]
-webhook_id = "ROOM_4991"
-discord_channel_id = "1473687356652654623"
+# Room 2.41 (First Floor, Turing) channel: 5301
+[programme_notifications.rooms.5301]
+webhook_id = "ROOM_5301"
+discord_channel_id = "1526569830038245377"
 
-# Platinum [2nd Floor] channel: 4992
-[programme_notifications.rooms.4992]
-webhook_id = "ROOM_4992"
-discord_channel_id = "1473687362147188909"
+# Room 3.27b (Second Floor, Turing) channel: 5302
+[programme_notifications.rooms.5302]
+webhook_id = "ROOM_5302"
+discord_channel_id = "1526569833586757662"
 
-# Europium [3rd Floor] channel: 4993
-[programme_notifications.rooms.4993]
-webhook_id = "ROOM_4993"
-discord_channel_id = "1473687365477339362"
+# Room 3.27c (Second Floor, Turing) channel: 5303
+[programme_notifications.rooms.5303]
+webhook_id = "ROOM_5303"
+discord_channel_id = "1526569837013499936"
 
-# Palladium [2nd Floor] channel: 4995
-[programme_notifications.rooms.4995]
-webhook_id = "ROOM_4995"
-discord_channel_id = "1473687370233679975"
-
-# Ferrum [Ground Floor] channel: 4996
-[programme_notifications.rooms.4996]
-webhook_id = "ROOM_4996"
-discord_channel_id = "1473687374063075399"
-
-# Dynamicum [Ground Floor] channel: 4997
-[programme_notifications.rooms.4997]
-webhook_id = "ROOM_4997"
-discord_channel_id = "1473687379884638311"
-
-# OpenSpace Lounge [3rd Floor] channel: 4999
-[programme_notifications.rooms.4999]
-webhook_id = "ROOM_4999"
-discord_channel_id = "1473687383424634880"
+# TBD channel: 5648
+[programme_notifications.rooms.5648]
+webhook_id = "ROOM_5648"
+discord_channel_id = "1526569841043963914"
