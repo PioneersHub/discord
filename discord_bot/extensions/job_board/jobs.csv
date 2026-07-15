@@ -1,91 +1,540 @@
-Timestamp,Email address,Job title,Company name,Job Location,Deadline,Job description,Duties and responsibilities,Appreciated qualification and experience,Additional info (optional),Contact person name,Contact person email,URL/Link to job posting,Picture for job posting (if available)
-08/08/2025 18:25:00,employer.branding@getyourguide.com,"Staff Data Analyst, Marketing Analytics",GetYourGuide,Berlin,,"GetYourGuide is searching for a Staff Data Analyst to join our Marketing Analytics team.
+Timestamp,Email address,Job title,Company name,Job Location,Deadline,Job description,Duties and responsibilities,Appreciated qualification and experience,Additional info (optional),Contact person name,Contact person email,URL/Link to job posting,URL/Link to the picture for job posting (if available)
+29/03/2026 20:12:31,serhii@tower.dev,Software Engineer - Python Runtime,Tower.dev,Berlin or London,30/04/2026,"As a runtime engineer at Tower, you'll be responsible for building and maintaining the secure, high-performance environment in which user-defined Python applications run. This includes designing the runtime environment, managing resource isolation, providing user-facing observability about performance and correctness, and implementing the overall systems that monitor and control execution at scale. You'll work primarily in Rust to ensure low-level performance and security, collaborating closely with our distributed systems team to integrate the runtime with our control plane. If you're excited about building robust systems that safely and efficiently run untrusted code in production, this role is for you.","- Own end-to-end (design, develop, and implement) the runtime environment for data apps in Tower.
+- Develop systems in Rust to manage resource isolation, sandboxing, and workload lifecycle across a multi-tenant platform.
+- Build tools and interfaces to provide observability into workload performance, behavior, and correctness.
+- Collaborate with a small, close-knit team and the company’s founders to define and implement a new way to run data apps in the cloud.
+- Collaborate with the distributed systems team to integrate the runtime with our control plane and orchestration layers.
+- Contribute to the overall security posture of the system, including execution isolation and safe handling of untrusted code.
+- Help shape the architecture and engineering practices of the team as an early contributor to the company.","- Proven experience in software engineering, with a focus on runtime environments and compute platforms.
+- Strong proficiency in multiple programming languages with a preference towards Rust, Golang, Python, and JavaScript.
+- Experience working on cloud platforms (AWS, Azure, GCP) and containerization technologies (Docker, Kubernetes).
+- Deep understanding of security best practices, especially for cloud systems and data security.
+- Proven track record of building and deploying scalable software systems.
+- Strong communication skills and a desire to partner with our customers in solving their problems.","Data teams waste countless hours wrestling with infrastructure instead of solving their businesses’ most critical problem: How to get more value from their data. Tower changes that.
 
-The Marketing Analytics team's objective is to help our marketing scale our investments towards the most incremental and loyal customers. This is a very strategic position within the team as the Analyst will look at solving cross-channel problems in order to accelerate our growth. This means for example addressing the best strategy to grow our mid-funnel spend and understanding the behaviour of our repeat audiences.","Develop quantitative analysis and statistical models to evaluate and steer marketing decisions
+We're a Python-native serverless data stack built on Apache Iceberg with powerful ETL and Lakehouse management tools. We integrate seamlessly with enterprise systems and make companies more nimble by letting them choose the best engine for each job while maintaining full data ownership.
 
-Propose and defend strategic recommendations to our top marketing leads
+Backed by leading VCs, we're a team of industry veterans from Snowflake and Databricks on a mission to make data engineers superheroes 🦸.",Brad Heller,brad@tower.dev,https://jobs.tower.dev/Software-Engineer-Runtime-Systems-12a1d1eaf236807b9bf3ede840784878,https://drive.google.com/file/d/1GAtPmN1W_m_IqMNv6Lb5beqQ4ViW47oX/view?usp=drive_link
+29/03/2026 20:14:04,serhii@tower.dev,Principal Software Engineer,Tower.dev,Berlin or London,30/04/2026,"We’re looking for a Principal Software Engineer to help define and execute the technical strategy of Tower. In this role, you'll work directly with our CTO to shape the architectural foundation of the platform, drive cross-cutting technical initiatives, and mentor engineers across the team. You’ll help us make the hardest technical decisions—balancing performance, scalability, developer experience, and time-to-market as we scale our infrastructure and product offerings.
 
-Maintain and improve our marketing measurement tools (Attribution, experimentation framework, Customer lifetime value…)
+This is a high-impact, high-trust role for someone who thrives on solving deep technical challenges and has a strong point of view on building robust, elegant systems that last. You’ll have broad influence across the company and play a key role in ensuring that Tower’s technology scales with our ambitions.","- Collaborate closely with the CTO to define and evolve the overall technical strategy for Tower’s compute and control plane.
+- Drive architectural decisions across major product surfaces—including runtime infrastructure, orchestration systems, developer tools, and the data plane.
+- As this is a coding-focused role, lead by example in coding and setting the standard for engineering excellence across the team.
+- Identify technical risks and design for change—building systems that scale with both customer demand and company growth.
+- Guide and mentor engineers across the whole stack, helping them grow and raising the technical bar company-wide.
+- Partner with product, design, and engineering leadership to ensure alignment between roadmap goals and technical strategy.","- Significant proven experience in software engineering, with a track record of owning complex system design and driving architecture across teams.
+- Deep expertise in building distributed systems and infrastructure, particularly for data-intensive or cloud-native applications.
+- Proficiency in multiple programming languages across multiple paradigms. We typically work in Golang, Rust, TypeScript, and Python.
+- Industry-leading expertise working on cloud platforms (AWS, Azure, GCP) and containerization technologies (Docker, Kubernetes).
+- Strategic mindset, meaning you’re comfortable thinking several steps ahead and designing systems that adapt over time.
+- Excellent communication skills and the ability to translate technical complexity into clear, actionable decisions.
+- Experience mentoring engineers and influencing without authority across an organization.","Data teams waste countless hours wrestling with infrastructure instead of solving their businesses’ most critical problem: How to get more value from their data. Tower changes that.
 
-Explore large datasets, give meaning to data and numbers, identify opportunities and issues, and present findings to stakeholders
+We're a Python-native serverless data stack built on Apache Iceberg with powerful ETL and Lakehouse management tools. We integrate seamlessly with enterprise systems and make companies more nimble by letting them choose the best engine for each job while maintaining full data ownership.
 
-Setup and analyse marketing experiments to drive strategic decision making
+Backed by leading VCs, we're a team of industry veterans from Snowflake and Databricks on a mission to make data engineers superheroes 🦸.",Brad Heller,brad@tower.dev,https://jobs.tower.dev/Principal-Software-Engineer-2411d1eaf236801a984bc916791d1cac,https://drive.google.com/file/d/1GAtPmN1W_m_IqMNv6Lb5beqQ4ViW47oX/view?usp=drive_link
+29/03/2026 20:15:46,serhii@tower.dev,Forward Deployed Engineer,Tower.dev,Berlin or London,30/04/2026,"We’re looking for a Forward Deployed Engineer to work directly with Tower’s earliest and most strategic customers, helping them design, build, and productionize our platform to solve real data and AI problems on top of Tower.
 
-Serve as a liaison between the marketing teams and the data engineering team
+This is an extremely technical role with lots of surface area spanning implementation, customer engagement, and product discovery. You’ll be the primary point of contact with customer teams, understand their hardest data problems, and build solutions that unlock adoption. On top of that, you’ll be the Tower’s eyes and ears, feeding those learnings back into Tower’s product roadmap.
 
-Mentor others in the skills needed for this role","8+ years of relevant experience interpreting data in an analytics, data science or business intelligence role
+You’ll operate at the frontier between engineering, product, and go-to-market by prototyping pipelines, designing architectures, debugging production issues, and shaping how Tower is used in the wild.
 
-Strong knowledge of SQL and Python for analysis (eg, pandas, scikit-learn, pyspark)
+If you like shipping real systems, talking to users, and influencing what a platform becomes, then this role is for you.","- Partner directly with customers to design and deploy data platforms using Tower.
+- Build production-grade pipelines, orchestration flows, and lakehouse architectures tailored to customer needs.
+- Prototype new workloads, ingestion patterns, and analytics use cases in Python.
+- Lead technical discovery during onboarding and early adoption.
+- Debug complex distributed-systems and data-infrastructure issues in live environments.
+- Translate customer requirements into reusable product features and platform improvements.
+- Work closely with product and engineering to influence roadmap priorities based on field learnings.
+- Develop reference architectures, templates, and best-practice guides for new Tower users.
+- Support sales and GTM teams in technical evaluations, proofs-of-concept, and enterprise rollouts.
+- Represent Tower externally in technical conversations with senior data engineers, architects, and platform teams.
+","- Bachelor’s degree in Computer Science, Engineering, or a related field or equivalent professional experience working on complex production systems.
+- Strong experience in the data ecosystem, building real-world data platforms, pipelines, or distributed systems.
+- Fluency in Python and comfort working across modern data stacks.
+- Experience with cloud platforms (AWS, GCP, or Azure), containerized systems, and building cloud-native products and platforms.
+- Familiarity with orchestration frameworks, lakehouses, or data processing engines.
+- Comfort working directly with customers and owning ambiguous technical problems end-to-end.
+- A high degree of agency, autonomy, and drive to grow professionally.
+- Excellent communication skills. You can explain architecture tradeoffs to both engineers and executives.
+- Product-minded: You don’t just implement requirements, you question them.
+- Willingness to travel occasionally to work onsite with customers.","Data teams waste countless hours wrestling with infrastructure instead of solving their businesses’ most critical problem: How to get more value from their data. Tower changes that.
 
-Ability to understand user behavior and meaning behind the numbers and a track record in sharing insights to business stakeholders
+We're a Python-native serverless data stack built on Apache Iceberg with powerful ETL and Lakehouse management tools. We integrate seamlessly with enterprise systems and make companies more nimble by letting them choose the best engine for each job while maintaining full data ownership.
 
-Prior exposure to digital and performance marketing, especially data-driven platforms such as Google Ads and Meta
+Backed by leading VCs, we're a team of industry veterans from Snowflake and Databricks on a mission to make data engineers superheroes 🦸.",Serhii Sokolenko,serhii@tower.dev,https://jobs.tower.dev/Forward-Deployed-Engineer-2fb1d1eaf236803f9614daf619b72e22,https://drive.google.com/file/d/1GAtPmN1W_m_IqMNv6Lb5beqQ4ViW47oX/view?usp=drive_link
+01/04/2026 10:12:36,klange@rosen-group.com,Physicist as Data Scientist / Algorithm Developer in the field of EMAT (all genders welcome) ,ROSEN Group,"Lingen (Ems), Osnabrueck",,"Data science refers to the extraction of knowledge from data. We achieve this through the use of the most modern tools from the areas of big data, high performance computing and artificial intelligence, especially deep learning. Our solutions in the area of predictive analytics allow the safe operation of critical infrastructures. An agile way of working and technological expertise enable us to master the greatest challenges. You will become part of our self-organizing teams, in which an exchange of knowledge with colleagues from different departments is inherent. We have the highest demands on ourselves to learn new things and to perfect old things. In this way, we are prepared for the future.","-   Development of algorithms for the detection and classification of objects from data measured by our pipeline inspection devices
+-   Co-design and use of technological trends, for example in the areas of artificial intelligence, high performance computing, data persistence and processing, and big data solutions
+-   Collecting, preparing, processing and analyzing large heterogeneous data sources
+-   Development of algorithmic methods from the areas of signal processing, machine learning and computer vision and use of 3rd party components
+-   Provision of algorithms and intelligent services in the form of minimum viable products with a focus on customer experience
+-   Interdisciplinary collaboration in the integration of the algorithms into our software applications","-   Degree or doctorate in physics
+-   Solid knowledge of applied mathematics (linear algebra, optimization methods, stochastics)
+-   Knowledge of at least one object-oriented programming language (e.g. Python, C/C++ or Java)
+-   Methodological skills in the field of data mining and machine learning, in particular supervised and unsupervised learning
+-   Experience in algorithm development, for example for descriptive and diagnostic analyses, as well as with forecasting methods
+-   Basic knowledge of non-destructive testing using ultrasound/EMAT and experience in the subject areas of explainable artificial intelligence, MLOps and applied statistics desirable
+-   Experience in software engineering is an advantage
+-   Good written and spoken English language skills","We offer:
 
-Experience with data visualization and reporting tools (e.g. Looker, Jupyter Notebooks, Databricks)
+-   Development opportunities and career opportunities in a global, innovative and long-term oriented group of companies with family character
+-   Flexible working hours & working time accounts as well as partial home office for a good work-life balance (38 hours/week)
+-   An open,  informal corporate culture, where we celebrate success with social events
+-   Compatibility of work and family through our company-owned bilingual day care center ROKIDS as well as our bilingual elementary school ROBIGS (optional: day care during the holiday)
+-   Employer funded pension and capital accumulation benefits
+-   Company Restaurant (only in Lingen) and fresh fruit is available daily
+-   Various in-house sports activities (EGYM Wellpass and other offers)
+-   Attractive leasing offers for IT-products and bikes for private use
+-   Corporate Benefits - employee offers in changing online shops at top conditions",Kerstin Lange,hr-lin@rosen-group.com,https://jobs.rosen-group.com/Job/5047,
+01/04/2026 10:18:31,klange@rosen-group.com,Physicist as Data Scientist / Algorithm Developer in the field of Ultrasound (all genders welcome) ,ROSEN Group,"Lingen (Ems), Osnabrueck",,"Data science refers to the extraction of knowledge from data. We achieve this through the use of the most modern tools from the areas of big data, high performance computing and artificial intelligence, especially deep learning. Our solutions in the area of predictive analytics allow the safe operation of critical infrastructures. An agile way of working and technological expertise enable us to master the greatest challenges. You will become part of our self-organizing teams, in which an exchange of knowledge with colleagues from different departments is inherent. We have the highest demands on ourselves to learn new things and to perfect old things. In this way, we are prepared for the future.","-   Development of algorithms for the detection and classification of objects from data measured by our pipeline inspection devices
+-   Co-design and use of technological trends, for example in the areas of artificial intelligence, high performance computing, data persistence and processing, and big data solutions
+-   Collecting, preparing, processing and analyzing large heterogeneous data sources
+-   Development of algorithmic methods from the areas of signal processing, machine learning and computer vision as well as use of 3rd party components
+-   Provision of algorithms and intelligent services in the form of minimum viable products with a focus on customer experience
+-   Interdisciplinary collaboration in the integration of the algorithms into our software applications","-   Degree or doctorate in information technology, physics, mathematics, computer science or a comparable field of study
+-   Solid knowledge of applied mathematics (linear algebra, optimization methods, stochastics)
+-   Knowledge of at least one object-oriented programming language (e.g. Python, C/C++ or Java)
+-   Methodological skills in the field of data mining and machine learning, in particular supervised and unsupervised learning
+-   Experience in algorithm development, for example for descriptive and diagnostic analyses, as well as with forecasting methods
+-   Basic knowledge of non-destructive testing using ultrasound and experience in the subject areas of explainable artificial intelligence, MLOps and applied statistics desirable
+-   Experience in software engineering is an advantage
+Good written and spoken English language skills","We offer:
 
-Desire to work in an international environment, with minimal direction and with highly engaged individuals
+-   Development opportunities and career opportunities in a global, innovative and long-term oriented group of companies with family character
+-   Flexible working time  and Home Office possible
+-   An open,  informal corporate culture, where we celebrate success with social events
+-   Compatibility of work and family through our company-owned bilingual day care center ROKIDS as well as our bilingual elementary school ROBIGS (optional: day care during the holiday)
+-   Employer funded pension and capital accumulation benefits
+-   Company Restaurant (only in Lingen) and fresh fruit is available daily
+-   Various in-house sports activities (EGYM Wellpass and other offers)
+-   Attractive leasing offers for IT-products and bikes for private use
+-   Corporate Benefits - employee offers in changing online shops at top conditions",Kerstin Lange,hr-lin@rosen-group.com,https://jobs.rosen-group.com/Job/5067,
+02/04/2026 16:27:04,jonas.dedden@deepl.com,(Senior) Staff Research Scientist,DeepL SE,Munich; Berlin; Cologne; London,,"We’re looking for a Senior Staff Research Scientist to lead scientific innovation across our speech and translation models. This is a high-impact, hands-on role for a research leader who can define long-term scientific strategy, prototype rapidly, run large-scale experiments, and drive breakthroughs all the way into production.
 
-Excellent written and verbal communication skills in English
-",,Sean Araujo,,https://grnh.se/ef8v5god1us,https://drive.google.com/open?id=1271lzALx4kie4vUAxKuHjhqqj6Qu-Hlp
-08/08/2025 18:31:32,employer.branding@getyourguide.com,Senior Data Scientist,GetYourGuide,Berlin,,"At GetYourGuide, we're looking for a passionate Senior Data Scientist to join our Traveler Data Products Team. In this role, you'll have the opportunity to make a significant impact on our product and our customers' experiences. You'll work with a vast and diverse set of structured and unstructured data, powering various data products such as search, recommendations, SEM, and incentives. Our team has touchpoints across the business, developing end-to-end solutions that directly contribute to creating memorable travel experiences for people around the world.","Develop innovative data products that not only delight our customers but also drive the success of our company.
+You will work across ASR, MT, TTS, streaming inference, and large speech models—leading both cascaded and emerging end-to-end internationalized speech-translation approaches.","    Lead hands-on research and development across ASR, MT, TTS, and speech-to-speech translation for real-time voice products.
 
-Take full ownership of projects, guiding them from the initial business challenge to the deployment of production code. This includes:
-- Analyzing large datasets to uncover meaningful insights
-- Building and maintaining robust data pipelines
-- Monitoring and optimizing data products after deployment
+    Design, train, and optimize large-scale ASR models for multilingual accuracy, robustness, and ultra-low-latency streaming.
 
-Contribute to the development of our machine learning infrastructure and help establish best practices that will shape our future.
+    Improve cascaded translation pipelines end to end: segmentation, ASR→MT interfaces, streaming MT inference, and incremental decoding.
 
-Work closely with cross-functional teams, leveraging your unique perspective to solve complex and exciting problems.
+    Develop and refine real-time TTS models with natural prosody, stable speaker characteristics, and fast inference.
 
-Support the continuous improvement and growth of our team, including participating in recruiting efforts to bring in new talent.","Machine Learning Familiarity with regressors, classifiers, and recommender systems. A solid understanding of ML techniques and their practical applications. Experience deploying ML models in production is a must. Experience with LLMs in a production environment is beneficial.
+    Build and experiment with end-to-end and LLM-based speech-to-speech translation systems, including streaming and one-shot approaches.
 
-Software Engineering Proficiency in Python. Knowledge of distributed machine learning and computing frameworks (e.g., Spark) is beneficial.
+    Own the full lifecycle of model delivery: prototyping, ablations, training, evaluation, optimization, and production deployment.
 
-Analytics Ability to transform data into actionable insights. Experience with hypothesis testing and proficiency in analytics tools (e.g., pandas, R) and SQL.
+    Work closely with engineering teams to integrate models into real-time systems, ensuring reliability, uptime, and quality at scale.
 
-Business Acumen Applied experience in a business environment, demonstrating result-driven work.
+    Drive improvements in inference efficiency, model serving, voice UX, and robustness to real-world acoustic conditions.
 
-Academic Background An advanced degree in a quantitative field or equivalent practical experience.
+    Establish strong practices for evaluation, reproducibility, monitoring, and continuous model improvement in production.
 
-Communication Strong skills in explaining complex concepts to both technical and non-technical stakeholders.",,Sean Araujo,,https://grnh.se/7h8k08931us ,https://drive.google.com/open?id=1-WwVKIO7Nv-a8gAYxLudH35Y18lIub7L
-08/08/2025 18:44:02,employer.branding@getyourguide.com,"Lead Product Manager, Traveler Data Products",GetYourGuide,Berlin,,"As a Lead Product Manager, you will have significant ownership and be responsible for defining a vision and strategy that impacts multiple product areas and teams within GetYourGuide. You will have an executive presence to gain buy-in and influence the company's long-term vision. In this role, you will execute complex projects that require multiple Product and Business teams that depend on you to achieve their goals.
+    Mentor researchers and engineers, promote hands-on collaboration, and raise the bar for model quality and operational excellence.","    Deep expertise in speech, audio, or multilingual ML, particularly in ASR, MT, TTS, end-to-end ST, or large speech models.
 
-On the Traveler Data Products team, you will enable our customers to discover products they will love. Your team consists of experienced data scientists and engineers tackling this challenge in an algorithmic way, mainly by applying techniques from machine learning and AI. You will also work closely with other product teams to leverage AI in ways that directly impact the traveler experience. You will be responsible for a critical part of our customer experience that also drives business success.
+    A hands-on builder who enjoys training models, running experiments, debugging pipelines, and integrating ML systems into production.
 
-Join our team as a visionary leader, where your passion for data products and enthusiasm for artificial intelligence will be the driving force behind shaping the future of supply optimization at GetYourGuide. We seek an inspiring and dynamic individual who is ready to harness the power of AI to transform our operations, innovate boldly, and lead us into a new era of efficiency and excellence.","Ownership: Develop and implement a comprehensive strategy for your product area, set clear, measurable goals, and take full responsibility for outcomes. Drive sustained impact through a long-term (12 months+) roadmap, identifying areas for non-incremental impact.
+    Strong understanding of real-time streaming constraints and how to design models that operate reliably at low latency.
 
-Ambiguity: Proactively navigate and clarify ambiguous situations, breaking down complex problems into manageable tasks. Making confident decisions even with incomplete information and independently identifying opportunities for significant impact.
+    Experience shipping ML models to production, maintaining them at scale, and working with engineers on deployment, monitoring, and serving.
 
-Communication: Articulate and connect your product area’s strategy to the company’s mission. Break down the strategy into actionable steps, regularly update stakeholders on progress, and create excitement for your long-term vision.
+    Ability to lead complex research efforts while staying grounded in product impact, user experience, and real-world performance.
 
-Prioritization: Analyze user feedback, market trends, and business metrics to inform decision-making. Prioritize initiatives, re-evaluate the roadmap based on new insights, and ensure the most valuable features are delivered first. Make strategic decisions on sequencing and prioritizing product work to maximize impact and learning.
+    Strong coding and experimentation skills (Python, PyTorch/JAX, audio processing libraries).
 
-Collaboration: Build trust with various stakeholders, set clear expectations, and align them with your product area’s roadmap. Facilitate cross-functional collaboration and create buy-in across the organization. Influence laterally and upward to build support for product initiatives, motivating and engaging your team and other important stakeholder groups.
+    Ability to communicate clearly, collaborate across teams, and align research work with product and engineering priorities.
 
-Experimentation: Plan and execute experiments to test hypotheses, develop A/B tests, and analyze data to derive actionable insights. Leverage experimentation to evaluate your team's investment and inform future product decisions.
+    Proven experience mentoring others and elevating technical quality across a fast-moving, applied research team.","Meet DeepL
 
-Leadership: Represent user interests at all levels of the organization. Act openly and transparently with your team, peers, and executive leadership. Provide coaching and mentorship to other team members, helping them grow and develop their skills.","6+ years of professional experience in data science-oriented product management and at least 2+ as a Lead Product Manager
+DeepL is a global AI product and research company focused on building secure, intelligent solutions to complex business problems. Over 200,000 business customers and millions of individuals across 228 global markets today trust DeepL's Language AI platform for human-like translation, improved writing and real-time voice translation.
+Founded in 2017 by CEO Jaroslaw “Jarek” Kutylowski, DeepL now has over 1,000 passionate employees and is supported by world-renowned investors including Benchmark, IVP, and Index Ventures.
 
-Demonstrated ownership over multiple product areas in a previous role, including responsibilities for strategy, KPI setup, goal-setting, and execution of roadmap
+Our goal is to become the global leader in trusted, intelligent AI technology, building products that drive better communication, foster connections, and create a meaningful impact. To achieve this, we need talented people like you to join our journey. If you’re ready to shape the future of AI and grow your career in a fast-moving, purpose-driven environment, DeepL is your next destination.
 
-Ability to build alignment with a cross-functional mission team and a large set of stakeholders in a collaborative way that is aligned with our Guiding Principles
+What sets us apart
 
-Excellent data analytics skills with the ability to derive insights from large data sets
+What sets us apart is our blend of cutting-edge AI technology, meaningful work, and a culture where people truly thrive. We’re a team of innovators, researchers, and creators driven by a shared purpose to unlock human potential by making work simpler, smarter, and more connected.
 
-Demonstrated passion for driving customer and business impact
+When we share what it’s like to work at DeepL, the reactions are overwhelmingly positive. This might be because of our technology that helps millions of people and businesses communicate and work better every day, or because of the trust, curiosity, and care that shape our culture.
 
-Excellent written and verbal communication skills in English",,Steve Rose,,https://grnh.se/miuxjfm51us,https://drive.google.com/open?id=1EmXrd-fcPn1e-L9MVU1ZJDqT5cbzXKKw
-12/08/2025 15:10:38,people@dlthub.com,Senior Software Engineer - Python,dltHub,Berlin,,"At dltHub, we're building on the success of dlt, the most popular open-source library for data loading in Python with over 2 million monthly downloads. After proving its value in the OSS community, we’re now building our commercial offering, dltHub, to make data engineering accessible to all Python developers.
+What we know for sure is this: being part of DeepL means joining a team dedicated to innovation, growth, and well-being. Discover more about life at DeepL onLinkedIn,Instagram, and our Blog.
+Meet the Team
 
-Our team is based in Berlin, now growing into other locations, especially across the US. Founded by experienced data and ML engineers, we're backed by Foundation Capital, Dig Ventures, and technical founders from Hugging Face, Instana, Matillion, Miro, MotherDuck, Datadog, Mode, and Rasa.
+DeepL Voice is defining the future of real-time multilingual communication. Built on the foundation of DeepL’s world-leading translation quality, the Voice Track brings together cross-functional teams across Research, Engineering, and Product to push the boundaries of what is possible in speech-to-speech interpretation.
 
-We're building a new service, ground-up, that brings together the `dlt` library, an LLM-first development workspace, and data lake storage and runtime for data pipelines and notebooks. This takes our stack beyond Python into new languages, infrastructure, and systems and we’re looking to grow the team with people who bring required skills and background. Our focus is on deeply understanding user needs and developing the best technologies to meet them. To make that happen, we’re looking for smart, driven people that, with time, will take ownership of key parts of the product.","- Design and implement our commercial product. This involves both writing Python code and listening to our customers, who are running sophisticated data platforms we augment.
-- You’ll be on top of recent trends in how data platforms are built and will be able to serve as a technical expert or architect. You’ll work closely with our Solution Engineering team and help them solve real-world problems our customers face.
-- Contribute to the dlt open source core, including code, tests, and documentation
-- Maintain the open source project with the team (e.g., review PRs, resolve issues, talk with community contributors, write docs, etc.)","Here’s the stack we use (or plan to use) so you can quickly see if it’s a good fit for you. Strong Python knowledge is essential. You don’t need to know everything listed, but if you’re confident in any of the areas below, we’d love to hear from you:
-- Python/OSS/backend: pyarrow, duckdb (data processing), ibis (data querying), data frame libraries like polars, fastapi/starlette. Rust for optimizations.
-- Frontend/UI: next.js/react, Marimo/Streamlit/Jupyter (Python)
-- Storage tech: DuckLake, Iceberg, Parquet, bucket storage
-- Runtime infra: Docker, Kubernetes, AWS/AZURE/GCP
-",,Steffi Flöth,people@dlthub.com,https://apply.workable.com/dlthub/j/CE1643F3B9/,https://drive.google.com/open?id=1rZCmKZnfhrX-RagR0Vwu1dVMH6ePatjd
+In just two years, we have launched our first customer-facing features and built reliable real-time systems for meetings, live communication, and developer integrations. We are now scaling up our research efforts to invent the next generation of audio, speech, and multimodal translation technologies.",Jonas Dedden,jonas.dedden@deepl.com,https://jobs.ashbyhq.com/DeepL/d262b540-9219-45c6-93b5-666611095b9f?departmentId=8f3eb545-cb4a-480a-acb8-a9feab8b9494,
+02/04/2026 16:32:29,jonas.dedden@deepl.com,Senior Staff Research Scientist,DeepL SE,Cologne; London; Munich,,"As a Senior Staff Research Scientist, you’ll lead the design, implementation, and deployment of cutting-edge research in reinforcement learning and post-training at scale. You will define DeepL’s scientific direction in this area, mentor researchers, and drive innovations that make it into production.","Shape scientific strategy and vision for post-training across DeepL, identifying high-leverage directions, setting technical standards and leading research initiatives in a highly dynamic, fast-paced environment
+
+Build and deploy state-of-the-art reinforcement learning pipelines at scale
+
+Post-train large (multi-modal) models to align them with human intent and enable general capabilities such as reasoning, pushing the boundaries of model performance, safety, and efficiency
+
+Drive the entire lifecycle of research and production: from idea conception, theoretical modeling, prototyping, ablation studies, all the way to production deployment
+
+Work closely with cross-functional leadership to shape the technical strategy and priorities of the foundational models research track
+
+Build and foster external collaborations with academic and industrial partners
+
+Set scientific and technical standards for experimentation, reproducibility, and model evaluation
+
+Collaborate deeply with Engineering, ML Platform, and HPC teams to deliver robust and reliable model updates to users
+
+Mentor and guide senior scientists, researchers, and engineers, fostering a culture of excellence, curiosity, and impact","We’re looking for a senior-staff-level scientist with a deep technical background, strong leadership skills, and a proven track record of driving research in reinforcement learning or large-scale model alignment to production.
+
+    PhD (or equivalent experience) in Computer Science, Machine Learning, Applied Mathematics, Physics or a related field
+
+    5+ years of experience in ML research, including several years leading high-impact projects with responsibilities extending across different teams
+
+    Strong expertise in deep reinforcement learning (RLHF/RLAIF/RLVR)
+
+    Hands-on experience scaling and deploying LLMs or other foundation models in real-world systems
+
+    Strong programming skills and experience working with large compute clusters and ML infrastructure
+
+    Excellent communication skills — able to clearly explain complex topics to diverse audiences
+
+    Track record of mentoring other scientists and setting technical long-term vision","Meet DeepL
+
+DeepL is a global AI product and research company focused on building secure, intelligent solutions to complex business problems. Over 200,000 business customers and millions of individuals across 228 global markets today trust DeepL's Language AI platform for human-like translation, improved writing and real-time voice translation.
+Founded in 2017 by CEO Jaroslaw “Jarek” Kutylowski, DeepL now has over 1,000 passionate employees and is supported by world-renowned investors including Benchmark, IVP, and Index Ventures.
+
+Our goal is to become the global leader in trusted, intelligent AI technology, building products that drive better communication, foster connections, and create a meaningful impact. To achieve this, we need talented people like you to join our journey. If you’re ready to shape the future of AI and grow your career in a fast-moving, purpose-driven environment, DeepL is your next destination.
+
+What sets us apart
+
+What sets us apart is our blend of cutting-edge AI technology, meaningful work, and a culture where people truly thrive. We’re a team of innovators, researchers, and creators driven by a shared purpose to unlock human potential by making work simpler, smarter, and more connected.
+
+When we share what it’s like to work at DeepL, the reactions are overwhelmingly positive. This might be because of our technology that helps millions of people and businesses communicate and work better every day, or because of the trust, curiosity, and care that shape our culture.
+
+What we know for sure is this: being part of DeepL means joining a team dedicated to innovation, growth, and well-being. Discover more about life at DeepL onLinkedIn,Instagram, and our Blog.
+
+Meet the team behind this journey: Foundation Model Task Adaptation
+
+We are the team behind DeepL’s post-training stack for large language models. We focus on developing algorithms and systems that align pre-trained models with tasks and performance goals through techniques like reinforcement learning. As a research-driven team, we stay up to date with current literature to integrate cutting-edge ideas into our core stack. As part of this team, you will shape the future of how our models learn beyond pre-training — enabling new capabilities, better controllability, and safer, more effective user experiences.",Jonas Dedden,jonas.dedden@deepl.com,https://jobs.ashbyhq.com/DeepL/b934f001-00f5-473e-b53f-9426e2bbc432?departmentId=8f3eb545-cb4a-480a-acb8-a9feab8b9494,
+07/04/2026 16:15:18,jason.teetz@snowflake.com,Software Engineer Intern - Berlin,Snowflake,Berlin,,"Snowflake is building the future of the agentic enterprise and seeks curious, AI-native thinkers who use AI as a trusted collaborator to solve problems and drive impact. We value low-ego, experimental minds who thrive in fast-moving environments. Founded to make cloud data platforms effective, affordable, and accessible, Snowflake is now a global leader. We’re looking for students passionate about innovation and shaping the future with us.","WHAT YOU WILL LEARN/GAIN :
+- How to build enterprise grade, reliable, and trustworthy software/services
+- Exposure to SQL and/or other database technologies (e.g., Spark, Hadoop)
+- Understanding of database internals, large-scale data processing, transaction processing, distributed systems, and data warehouse design
+- Implementation, testing of features in query compilation, compiler design, query execution
+- Experience working with cloud infrastructure, AWS, Azure, and/or Google Cloud in particular
+- Learning about cutting edge database technology and research","WHAT WE EXPECT :
+- Must be actively enrolled in an accredited college/university program during the time of the internship
+- Required: A completed BS degree, with an MS or PhD in progress
+- Desired Majors: Computer Science, Computer Engineering, Electrical Engineering, Physics, Math, or related field
+- Required coursework: algorithms, data structures, and operating systems
+- Recommended coursework: Database systems, distributed systems, Geospatial/Geographic IS, cloud computing, compilers,
+- Bonus experience: Research or publications in databases or distributed systems, experience with geo features processing, and contributions to open source.
+- Experience working with big data (engineering / processing) and data migration
+- Duration: 4 month minimum, 6 months recommended, up to 12 months supported, start date flexible
+- Target start dates: February 2026 and onward
+- Excellent programming skills in C++ or Java
+- Knowledge of data structures and algorithms
+- Strong problem solving and ability to learn quickly in a dynamic environment
+- Fluent English language skills (oral and written)
+- Experience with working as a part of a team
+- Dedication and passion for technology
+- Systems programming skills including multi-threading, concurrency, etc.",,,,https://careers.snowflake.com/us/en/job/SNCOUS3A9BAEAFB10741FBA9B3A98AB78275EDEXTERNALENUS41E65C6CA01E4F40AF14AE75D3B95E27/Software-Engineer-Intern-Berlin-2026,
+07/04/2026 16:20:04,jason.teetz@snowflake.com,Software Engineer - Ecosystem team,Snowflake,Warsaw,,"Snowflake is shaping the agentic enterprise and seeks curious, AI-native thinkers who use AI to drive impact in fast-moving environments. Our cloud-built Data Cloud helps thousands of organizations unlock data at scale. The Developer Platform team is launching a new Ecosystem Team to grow partner integrations and tools, delivering a world-class developer experience and enabling the next generation of data applications.","As a Software Engineer on the Ecosystem team, you will:
+- Design, develop, and maintain features for the platform and various ecosystem tools.
+- Contribute to critical open-source projects, engage with the developer community, and help resolve issues with key connectors like SQLAlchemy and Tableau.
+- Work with a variety of languages, including Java, Python, and Go, to support tools like the Terraform Provider and other ecosystem integrations.
+- Partner closely with Product Managers to understand customer requirements and translate them into cutting-edge new capabilities.
+- Analyze and solve complex challenges in fault tolerance, high availability, performance, and scale.
+- Ensure the operational readiness of our services and meet our commitments to customers regarding reliability and performance.
+- Participate in on-call rotations to support the services you build.","Our Ideal Software Engineer will have:
+- 2+ years of industry experience designing, building, and supporting software in a production environment.
+- Proficiency in Python is required.
+- Experience with systems programming, including multi-threading, concurrency, and related concepts.
+- Strong debugging and troubleshooting skills, particularly in a cloud environment.
+- Excellent communication skills and a passion for collaborating with a diverse group of colleagues and external developers.
+- BS/MS in Computer Science or a related major, or equivalent experience.
+
+Bonus points for experience with the following:
+- Experience with Go or JavaScript.
+- Experience building and designing customer-facing distributed web services and APIs (e.g., REST, RPC).
+- Knowledge of SQL or other database technologies, including their internal design and implementation.
+- Familiarity with public clouds (AWS, Azure, GCP).",,,,https://careers.snowflake.com/us/en/job/SNCOUSBD439F62AB9842CE85D70D7DB85BB93DEXTERNALENUS1049519796004590986383F31F93A200/Software-Engineer-Ecosystem-team,
+07/04/2026 16:31:10,jason.teetz@snowflake.com,Engineering Manager Performance,Snowflake,Berlin,,"Snowflake is powering the era of the agentic enterprise and seeks curious, AI-native thinkers who thrive in fast-moving environments. The Capacity, Performance & Efficiency team in Berlin drives the performance, reliability, and cost efficiency of Snowflake’s infrastructure across AWS, Azure, and GCP. This Engineering Manager role leads work that shapes how Snowflake scales globally on next-generation hardware.","Lead Engineering Execution:
+- Guide a team building software that continuously measures and improves system performance across multi-cloud fleets.
+- Develop distributed performance frameworks and profilers that operate at hyperscale.
+- Collaborate on adaptive scheduling, placement, and resource management systems that improve efficiency and predictability.
+- Partner with capacity and hardware engineering to validate new instance types, GPUs, and compute generations for optimal performance.
+
+Drive Technical Excellence:
+- Shape the roadmap for benchmarking, telemetry, and performance regression detection.
+- Translate hardware and kernel-level insights into distributed-system optimizations.
+- Contribute to the design of scalable services that keep Snowflake performant as we adopt new processor generations, accelerators, and storage technologies.
+
+Grow & Empower the Team:
+- Mentor engineers in building high-impact systems and developing a strong performance-engineering culture.
+- Foster collaboration and curiosity around low-level system design and large-scale distributed architectures.
+- Help shape engineering practices in Berlin, building a team known for precision, speed, and impact.
+
+Collaborate Across Snowflake:
+- Work with product, infrastructure, and finance teams to optimize cost and utilization.
+- Engage directly with cloud providers to evaluate hardware roadmaps and performance characteristics.
+- Communicate key insights and results to leadership and cross-functional stakeholders.","Experience
+- 8+ years of hands-on software engineering experience, including 2+ years managing engineers.
+- Proven background in distributed systems, large-scale infrastructure, or performance engineering.
+- Deep understanding of how modern cloud hardware (CPU generations, GPUs, accelerators, networking, storage) affects system performance.
+- Experience with performance analysis tools, telemetry systems, and scalable monitoring frameworks.
+- Proficiency across multiple cloud environments (AWS, Azure, GCP).
+
+Skills:
+- Strong coding background (Python, C++, Java, or Go).
+- Fluency in distributed systems concepts—scheduling, orchestration, data locality, and resource isolation.
+- Ability to debug complex interactions between software and hardware.
+- Excellent communication and leadership skills; capable of guiding both technical direction and people growth.
+
+Preferred Qualifications:
+- Experience with workload benchmarking, fleet modeling, or predictive performance analysis.
+- Exposure to large-scale compute scheduling systems (Kubernetes, Borg, Mesos, Volcano, Kueue, etc.).
+- Familiarity with modern processor and GPU architectures and their performance profiles.
+- Contributions to open-source infrastructure or performance-engineering tools.",,,,https://careers.snowflake.com/us/en/job/SNCOUS95222B132E18483285C8E68FC8F64143EXTERNALENUS6CB7F132F93C48728DEBF2F4F31A4DF5/Engineering-Manager-Performance,
+07/04/2026 16:35:38,christopher.sedlaczek-bock@mobilityhouse.com,Senior Data Engineer / Software Engineer,The Mobility House Energy,Munich,,"We are looking for a Data Engineer / Software Engineer to build and operate an energy trading platform that supports energy trading, analytics, and decision-making. This role sits at the intersection of data engineering and software engineering, with ownership of scalable services and data pipelines running on AWS.
+
+In this role, you will design, implement, and maintain data pipelines and long-running services that process large volumes of energy market data. You will work closely with traders, analysts, and other engineers to ensure that critical data is available, accurate, and timely for dashboards and decision-making tools.
+
+This role is best suited for senior-level engineers with experience in taking end-to-end ownership of critical data services in production.","Develop and maintain containerized services deployed on ECS
+Build and orchestrate workflows using Airflow and/or Prefect
+Apply software engineering best practices: modular design, testing, CI/CD, code reviews, and versioning
+Design and maintain analytics-ready data models tailored to trading, risk, and performance reporting
+Collaborate with traders, analysts, and engineers to define metrics, KPIs, and data contracts
+Connect curated datasets to dashboards and BI tools (e.g., Grafana)
+Ensure data correctness, timeliness, and availability for business-critical dashboards
+Implement monitoring, alerting, retries, and backfills for pipelines and services
+Optimize performance, scalability, and cost across AWS components
+Document systems, services, and data models to support self-service analytics
+We care more about strong engineering fundamentals than experience with every specific tool listed","Strong experience in Data Engineering or Software Engineering, focused on data-intensive systems
+Solid understanding of ETL/ELT patterns, workflow orchestration, and data modeling
+Hands-on production experience with Airflow and/or Prefect
+Experience running containerized workloads in production using AWS ECS
+Proficiency in Python, with an emphasis on clean, maintainable, testable code
+Strong SQL skills and experience with relational databases
+Solid working knowledge of AWS services (e.g. ECS, S3, IAM, CloudWatch)
+Infrastructure-as-code experience","Experience in energy trading, power markets, commodities, or financial markets
+Familiarity with time-series data, market curves, and forecast data
+Experience operating streaming systems for market or operational data
+Practical experience with Apache Spark and/or Apache Flink
+Knowledge of AWS-native streaming tools (Kinesis)
+Experience with data observability, quality checks, and SLAs
+Exposure to quantitative, forecasting, or optimization systems",Vanessa,career@mobilityhouse.com,https://tmh.jobs.personio.de/job/2500282?display=en,
+07/04/2026 16:59:32,christopher.sedlaczek-bock@mobilityhouse.com,Senior Software Engineer,The Mobility House Energy,Munich,,"Help shape our vision of an emission-free energy and mobility future and bring a
+high level of responsibility and rapid development in a growing and innovative company.","Develop & optimize cloud-based solutions that provide flexibility to the energy markets.
+Enhance system reliability, scalability, observability and cost-efficiency of our AWS cloud infrastructure.
+Implement cutting edge technologies using primarily Python.
+Continuously improve software development practices, ensuring highest security and quality standards.
+Embrace the DevOps mindset: you build it, you ship it, you run it!","An experienced Software Engineer with at least 7 years of professional experience (excluding positions as working student or internships).
+Strong expertise in Python.
+Strong expertise in AWS cloud architecture and infrastructure best practices.
+Strong expertise software engineering best practices and design patterns.
+Passionate about the energy transition and willing to be drive the energy sector towards a greener future.
+Fluent in English, written and spoken.",,Vanessa,career@mobilityhouse.com,https://tmh.jobs.personio.de/job/2422717?display=de,
+07/04/2026 17:49:38,christopher.sedlaczek-bock@mobilityhouse.com,(Senior) Flutter Engineer,The Mobility House Enery,Munich,,"Experienced in Flutter
+Understanding of maintaining apps in the AppStores (Apple, Google)
+Interests exceed “the code” and you help to drive design decisions, incorporate customer feedback, or to make the UI/UX more accessible
+Experienced or interested in backend (Typescript, Python)
+Solid understanding of domain driven design and how to design systems
+Hands-on production experience with CircleCI or similar CI/CD platforms
+Solid working knowledge of AWS services (e.g. ECS, S3, IAM, Lambda, CloudWatch, SNS/SQS)","Develop, test and maintain our customer facing mobile application (Flutter)
+Develop, test and maintain our cloud service landscape (AWS)
+Apply software engineering best practices: modular architectural design, automated functional testing, multi environment CI/CD
+Implement monitoring, alerting, retries and build a failover system, no on-call responsibility
+Optimize performance, scalability, and cost across AWS components
+We care more about strong engineering fundamentals than experience with every specific tool listed
+Mindset matters: help others grow, see the system as a whole, be proactive","Experience in energy trading, power markets, virtual power plants, data (dis-)aggregation
+Infrastructure-as-code experience
+Willing to participate in on-site events in the Munich office
+Being in the office at least twice a week
+TypeScript, Python, Rust, … it doesn’t matter to you
+Familiar with agile working techniques",,Vanessa,career@mobilityhouse.com,https://tmh.jobs.personio.de/job/2536753?display=en,
+09/04/2026 12:00:29,lilly@priorlabs.ai,"ML Engineer, Open Source",Prior Labs,Freiburg or Berlin,,"You will have ownership over designing, building, and scaling the core infrastructure that brings Prior Labs' foundation models to the world. This is a unique opportunity to make fundamental architectural decisions, establish engineering best practices from the ground up, and profoundly shape the technical direction for serving state-of-the-art AI.
+
+You'll work directly with world-class AI researchers, translating cutting-edge models into reliable, scalable production systems. This role offers significant autonomy and impact, with clear paths to specialize in areas you're passionate about (like ML infrastructure or core backend systems) or grow into a technical leadership position as our team expands. You won't just be implementing features; you'll be building the backbone of our company.","Architect & Design: Design robust, scalable, and secure backend systems and production-grade APIs for serving and finetuning our foundation models.
+
+Build & Implement: Develop high-quality, maintainable code (Python/FastAPI experience highly valued) for core backend services.
+
+Own Infrastructure: Design, deploy, and manage core infrastructure on cloud platforms, focusing on reliability, monitoring, observability, and cost-efficiency.
+
+Core MLOps Concepts: Understanding of the entire machine learning lifecycle (MLLC) from data ingestion and preparation to model deployment, monitoring, and retraining.
+
+Ensure Compliance & Security: Implement secure, GDPR-compliant systems, including data storage, access control, usage tracking, and quota management.
+
+Champion Best Practices: Drive high standards for testing, CI/CD, documentation, and security within the engineering team.","3+ years of professional experience in a cloud engineering, data platform, or SRE role, with a proven track record of managing production infrastructure.
+
+Proven experience building and maintaining data-intensive systems, with a strong understanding of data modeling, storage, and processing technologies.
+
+Strong, hands-on experience with Infrastructure as Code (IaC) using tools like Terraform.
+
+Significant experience with containerization and orchestration technologies (Docker, Kubernetes).
+
+Proficiency in Python.",,,,https://priorlabs.ai/careers?ashby_jid=93ef6100-091d-46f5-8f73-3843fe993ede,
+09/04/2026 12:02:17,lilly@priorlabs.ai,"Research Scientist, Foundation Model",Prior Labs,Freiburg or Berlin,,"Tabular data breaks the assumptions that make scaling work for language and vision. There's no natural sequence, no spatial structure, no shared vocabulary across datasets. The architectures and scaling laws that power LLMs don't transfer. We've made the first breakthrough with TabPFN — but the hardest problems are still ahead.
+
+At Prior Labs, Research Scientists drive the core model agenda. You'll define research directions, design novel architectures, and publish work that advances the field — while ensuring your ideas translate into models that actually ship. We create cutting-edge models because the same people do both. As an early team member, you'll have significant technical ownership and room to grow as we scale.","Scaling transformer architectures from 10K to 1M+ samples — without the structural assumptions that make language models scale
+
+Building multimodal models that combine tabular, text, and numerical understanding
+
+Making models efficient enough for real-world deployment — not just accurate enough for a paper
+
+Designing architectures for time series, forecasting, anomaly detection, and multiple related tables
+
+Researching causal understanding in foundation models","PhD in Computer Science, Applied Mathematics, Statistics, Electrical Engineering, or a closely related field, or equivalent research experience with demonstrated impact
+
+Publications at top-tier ML venues (NeurIPS, ICML, ICLR, etc.) or equivalent impact through widely used open-source, benchmarks, or deployed systems
+
+Strong experience building and analyzing machine learning models, including transformer or other sequence-based architectures, using PyTorch
+
+Solid understanding of training dynamics, generalization, scaling behavior, and common failure modes in deep learning systems
+
+Excellent engineering fundamentals and strong Python skills, with a track record of writing high-quality research code",,,,https://priorlabs.ai/careers?ashby_jid=b37463f2-775d-42e0-8c58-4ec26927534b#open-positions,
+09/04/2026 12:05:18,lilly@priorlabs.ai,Founding Developer Relations Engineer,Prior Labs,"Berlin, Freiburg, NYC, SF ",,"As the Developer Relations - Founding Role at Prior Labs, you will be the technical face of Prior Labs, responsible for nurturing a vibrant community around our foundation models. As the first DevRel hire, you will create and share meaningful content, build samples and tutorials, improve documentation, and contribute code when needed. You'll directly engage with data scientists through social media, blogs, Discord, GitHub, and at events, providing insights and support while collecting feedback that directly influences what we build. This role requires a unique balance: you must be technical enough to earn credibility with ML engineers and social enough to build genuine relationships with our developer community.","Your week balances technical building with community engagement:
+
+Technical work (~60%): Write Python demos and Colab notebooks, contribute bug fixes and improvements to our repos, create tutorials showing real TabPFN use cases, experiment with the model on diverse datasets, build sample applications
+
+Community work (~40%): Answer questions on Discord and GitHub, host community office hours, share content and engage on social media, gather and synthesize developer feedback, organize virtual events or hackathons","Technical foundation
+Technical background with Bachelor's or Master's in Computer Science, Data Science, or related field
+
+Strong Python skills and ability to write clean, functional code
+
+Solid ML fundamentals: you understand training, fine-tuning, inference, and can work with frameworks like scikit-learn, PyTorch, or similar
+
+Proven track record of technical work in public - we need to see your contributions (open source PRs, technical blog posts, GitHub projects, conference talks, etc.)
+
+Community building
+You've actively participated in and contributed to technical communities (GitHub, Discord, Stack Overflow, Twitter/X, Reddit, etc.)
+
+Excellent written and verbal communication - you can explain complex ML concepts clearly to practitioners
+
+Comfortable being a public face - you enjoy developer engagement on social media, forums, and at events
+
+Experience
+3+ years in developer relations, community management, technical content creation, ML engineering with community involvement, or similar roles where you've bridged technical and community work
+
+Track record of creating technical content that developers actually use and reference
+",,,,https://priorlabs.ai/careers?ashby_jid=3dcff0bc-0dbf-4cb6-9a7d-b4f17b7f9cf0#open-positions,
+09/04/2026 17:43:33,jobs@steadforce.com,Junior Projekt-/ Produktmanager (m/w/d) mit Coding Skills,Steadforce GmbH,München,,"In dieser Rolle unterstützt du die Planung und Steuerung von Softwareprojekten und stellst sicher, dass Zeit, Budget und Qualität eingehalten werden. Du arbeitest eng mit Entwickler:innen und Stakeholdern zusammen, bringst eigene Ideen in Prozesse ein und behältst den Projektfortschritt im Blick. Mit deinen Coding-Kenntnissen entwickelst du kleinere Tools und verstehst technische Anforderungen schnell. Zudem wirkst du bei der Gewinnung neuer Projekte mit und übernimmst schrittweise Verantwortung für Teilprojekte.","Deine Aufgaben
+Du unterstützt bei der Planung, Koordination und Nachverfolgung von Softwareprojekten und sorgst dafür, dass Termine, Budget und Qualität im Einklang stehen.
+
+Außerdem unterstützt du das Team bei technischen Aufgaben, entwickelst kleine Tools oder Scripts und kannst so Prozesse direkt verbessern.
+
+In enger Zusammenarbeit mit Entwickler:innen, Product Ownern und Stakeholdern gestaltest du Workflows und Projektstrukturen aktiv mit und bringst eigene Ideen ein.
+
+Du überwachst den Projektfortschritt, identifizierst Risiken frühzeitig und trägst zur Lösung von Problemen bei, bevor sie den Ablauf stören.
+
+Mit deinem Coding-Know-how bist du in der Lage, technische Zusammenhänge schnell zu verstehen und Anforderungen klar zu kommunizieren.
+
+Darüber hinaus trägst du aktiv zur Akquise neuer Kunden und Projekte bei, erkennst Chancen, pflegst Kontakte und unterstützt beim Aufbau langfristiger Geschäftsbeziehungen.
+
+Schrittweise übernimmst du Verantwortung für Teilprojekte, koordinierst Aufgaben und unterstützt das Team bei der Optimierung interner Prozesse.","Dein Profil
+Du hast ein abgeschlossenes Studium (z. B. Informatik, Wirtschaftsinformatik, BWL mit IT-Fokus) oder eine vergleichbare Qualifikation.
+
+Erste praktische Erfahrungen im Projektmanagement, die du bei einem IT Dienstleister z. B. durch Praktika oder Werkstudententätigkeiten gesammelt hast, runden dein Profil ab.
+
+Außerdem verfügst du über Grundkenntnisse im Programmieren und bringst Kompetenzen in der Konzeption, Umsetzung und Automatisierung digitaler Lösungen mit.
+
+Du hast Lust Coding-Aufgaben praxisnah einzusetzen.
+
+Du bist organisiert, kommunikativ und lösungsorientiert und behältst auch bei komplexen Projekten den Überblick.
+
+Ein Grundverständnis für Softwareentwicklung, Datenbanken und Cloud-Technologien hilft dir, technische Zusammenhänge schnell zu erfassen.
+
+Du hast Spaß daran, neue Kunden zu gewinnen und Beziehungen aufzubauen, bringst Eigeninitiative und eine proaktive Denkweise mit.
+
+Du zeichnest dich durch Eigeninitiative, Lernbereitschaft und eine Hands-on-Mentalität aus und scheust dich nicht, Verantwortung für Aufgaben und kleine Projekte zu übernehmen.",,,,https://steadforce.jobs.personio.de/job/2523278,
+09/04/2026 17:47:21,jobs@steadforce.com,Cloud / Platform Engineer (m/w/d),Steadforce GmbH,München,,"In dieser Rolle verantwortest du den Aufbau und Betrieb moderner Cloud- und Plattformlösungen auf Basis von AWS und Azure. Du entwickelst und optimierst CI/CD-Pipelines, betreibst Kubernetes- und Container-Plattformen und stellst durch Monitoring, Logging und Incident Management einen stabilen Betrieb sicher. Dabei arbeitest du eng mit Development-, Security- und Operations-Teams zusammen, um skalierbare und zuverlässige Systeme zu gewährleisten.","Deine Aufgaben
+Du bist für Design, Aufbau und Betrieb moderner Cloud- und Plattform-Architekturen (AWS, Azure) verantwortlich
+
+Außerdem entwickelst, automatisierst und optimierst du CI/CD-Pipelines
+
+Aufbau und Betrieb von Kubernetes- und Container-Plattformen zählt ebenfalls in deinen Verantwortungsbereich
+
+sowie Monitoring, Logging und Incident Management
+
+Du arbeitest eng mit den Development-, Security- und Operations-Teams zusammen","Dein Profil
+Ausbildung im Bereich der Informatik oder Studium der Informatik, gerne auch Quereinstieg
+
+Erfahrung im Bereich Cloud Engineering / Platform Engineering / DevOps
+
+Sehr gute Kenntnisse in mindestens einer Cloud-Plattform (AWS, Azure oder GCP)
+
+Erfahrung mit Kubernetes, Docker und Container-Orchestrierung
+
+Praxis mit Infrastructure as Code (Terraform, Ansible, Helm etc.)
+
+Sicherer Umgang mit Linux und Scripting (Bash, Python, Go o. Ä.)
+
+Verständnis moderner Softwarearchitekturen (Microservices, Event-driven, API-first)
+
+Eigenverantwortliche, strukturierte Arbeitsweise und Teamfähigkeit",,,,https://steadforce.jobs.personio.de/job/2523154,
+13/04/2026 08:12:36,jgraefenstein@rosen-nxt.com,Senior Machine Learning Engineer,Rosenxt,"Lohne-Wietmarschen (DE), Osnabrück(DE), Bristol(UK)",,"Rosenxt is a technology group creating innovative solutions for critical infrastructure in harsh environments. Our Software and AI organization spans teams across the world working on everything from data pipelines to autonomous navigation, to customer portals.
+
+We are investing in AI-assisted development, shared ML infrastructure, and developer tooling as force multipliers for our engineering teams. This role will build and maintain those shared capabilities, the platforms, standards, and tools that let teams across Rosenxt move faster without solving the same problems independently. ","Evaluate, configure, and maintain the AI development tool stack (GitHub Copilot, custom agents, local LLMs).
+
+Standardise how AI agents interact and integrate with our internal tools, services, and development workflows with MCP.
+
+Build retrieval-augmented generation systems over Rosenxt's internal documentation.
+
+Define and implement productivity and quality metrics. Run controlled pilots, measure impact, and use data to drive adoption decisions.
+
+Ensure AI-assisted development tools and ML systems comply with internal governance frameworks and regulation including the EU AI Act. Work within established security and IP protection practices.
+
+Build and maintain reusable CI/CD templates for ML pipelines.
+
+Develop and maintain reusable system prompts for common engineering tasks and complex technical domains.
+
+Run training sessions, document best practices, and build the internal knowledge base that raises the AI capability of the whole organization. ","Several years of leadership as Technical Lead or Engineering Manager in ML; 5+ years of ML engineering experience.
+
+Proven track record designing, building, and operating scalable production ML systems and software platforms with measurable business impact.
+
+Experience building platform and infrastructure tools for other engineering teams and defining development processes and workflows.
+
+Excellent Python skills, hands-on cloud experience (Azure/AWS/GCP), and strong MLOps practice (CI/CD for ML, versioning, monitoring, automation).
+
+Deep understanding of modern LLM architectures (transformers, attention) and extensive production experience with foundation and embedding models.
+
+Proficiency with agentic frameworks, multi-agent system design, and advanced prompt engineering.
+
+Excellent communication skills to convey complex technical topics clearly to diverse stakeholders.
+
+Strong influence through expertise, ability to lead without formal authority, and collaborative mindset in complex organizations.
+
+High autonomy and comfort with ambiguity, combined with a servant-leadership mindset focused on enabling other engineers.
+
+Resilient, pragmatic approach with evidence-based iteration in emerging technology areas.",,Catherine Seale,cseale@rosen-nxt.com,https://rosennxt.wd103.myworkdayjobs.com/de-DE/Rosenxt/job/Wietmarschen-Lohne/Senior-Machine-Learning-Engineer--all-genders-welcome-_JR100957,
+13/04/2026 08:17:13,jgraefenstein@rosen-nxt.com,DevOps Engineer,Rosenxt,"Lohne-Wietmarschen (DE), Osnabrück (DE)",,"At Rosenxt, we develop technologies that support critical infrastructure and enhance performance in industries where reliability comes first. Our teams combine deep domain expertise with modern software development to turn complex data and processes into actionable insights for our customers.
+
+As part of our DevOps team with a focus on Kubernetes, Azure Cloud, and Infrastructure as Code, you will build and continuously maintain scalable and secure cloud infrastructures. With a strong focus on automation, you will ensure the availability and scalability of our Kubernetes clusters and the applications running on them. In a technology-driven environment with close interdisciplinary collaboration, you will support our development teams in their day-to-day work and help bring our solutions to life.","Design, implement, and manage scalable and secure cloud infrastructures based on Kubernetes and Azure Cloud.
+
+Develop and manage infrastructure using Terraform and Infrastructure as Code.
+
+Design, implement, and maintain CI/CD pipelines using Azure DevOps and GitHub.
+
+Provide and manage tools for cost and security monitoring.
+
+Automate deployment processes to enable fast and reliable software delivery.
+
+Implement branching strategies and workflows to support development processes.
+
+Collaborate closely with development teams to ensure smooth project execution.
+
+Support development and production environments.","At least 2 years of professional experience in a DevOps or similar role.
+
+Strong knowledge of Kubernetes and Azure Cloud services, ideally with relevant certifications such as Certified Kubernetes Administrator or Azure DevOps Engineer Expert.
+
+Experience working with cloud infrastructures and managing CI/CD pipelines, for example with Azure DevOps or GitHub.
+
+Confident handling of container technologies such as Docker and Infrastructure-as-Code tools such as Terraform.
+
+Experience with configuration management tools such as Ansible.
+
+Knowledge of security best practices in cloud environments.
+
+Experience with monitoring and logging solutions such as OpenTelemetry, Jaeger, Prometheus, and Grafana.
+
+Proven experience managing source code repositories and version control systems such as Git.
+
+Familiarity with scripting languages such as Bash, Python, or PowerShell.
+
+Basic knowledge of tools from the CNCF ecosystem.
+
+Strong understanding of CI/CD concepts and automated deployment processes.",,Daniel Tausch,dtausch@rosen-nxt.com,https://rosennxt.wd103.myworkdayjobs.com/de-DE/Rosenxt/job/Wietmarschen-Lohne/DevOps-Engineer---Kubernetes---Azure-Cloud--all-genders-welcome-_JR100845,
