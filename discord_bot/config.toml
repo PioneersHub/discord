@@ -2,7 +2,7 @@
 CONFERENCE_NAME = "EuroSciPy 2026"
 CONFERENCE_WEBSITE = "https://euroscipy.org"
 CONFERENCE_YEAR = 2026
-VOLUNTEER_SHIRT_COLOR = "blue-grey"
+VOLUNTEER_IDENTIFIER = "yellow badge ribbons"
 TICKET_EMAIL_ADDRESS = "info@euroscipy.org"
 
 [server]

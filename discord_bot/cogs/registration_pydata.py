@@ -58,6 +58,6 @@ class RegistrationPyData(Registration, commands.Cog):
             "Your registration was successful if you can see the conference channels under the categories "
             f"'{config.CONFERENCE_YEAR}_CONFERENCE' and '{config.CONFERENCE_YEAR}_ROOMS'.\n\n"
             "Experiencing trouble? Ask for help in the #registration-help channel or from a "
-            f"volunteer (look for the {config.VOLUNTEER_SHIRT_COLOR} t-shirts) at the conference.\n\n"
+            f"volunteer (identified by {config.VOLUNTEER_IDENTIFIER}) at the conference.\n\n"
             f"See you at {config.CONFERENCE_NAME}! 🐍💻🎉"
         )
