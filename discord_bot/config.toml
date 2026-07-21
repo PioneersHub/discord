@@ -65,6 +65,11 @@ conference_afternoon_session_start_time = 13
 pretalx_schedule_url = "https://pretalx.com/api/events/euroscipy-2026/schedules/latest/?expand=slots,slots.room,slots.submission,slots.submission.speakers,slots.submission.submission_type,slots.submission.track"
 pretalx_talk_url = "https://pretalx.com/euroscipy-2026/talk/{code}"
 video_url = "https://euroscipy.org"
+# URL templates for the livestream and Q&A links. They support the
+# {video_url} and {code} placeholders, e.g. "{video_url}/talks/{code}".
+# Leave a template empty to omit that field (e.g. no online Q&A).
+livestream_url = "https://www.youtube.com/c/EuroSciPy/videos"
+q_and_a_url = ""
 
 [[programme_notifications.notification_channels]]
 webhook_id = "PROGRAMME_NOTIFICATIONS"
