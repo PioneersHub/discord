@@ -91,14 +91,17 @@ class RegistrationForm(discord.ui.Modal, title="Europython 2023 Registration"):
                     #     error=ex,
                     # )
                     changed_nickname = False
-            await log_to_channel(
-                channel=interaction.client.get_channel(config.REG_LOG_CHANNEL_ID),
-                interaction=interaction,
-                name=self.name.value,
-                order=self.order.value,
-                ticket_id=ticket_id,
-                roles=roles,
-            )
+            try:
+                await log_to_channel(
+                    channel=interaction.client.get_channel(config.REG_LOG_CHANNEL_ID),
+                    interaction=interaction,
+                    name=self.name.value,
+                    order=self.order.value,
+                    ticket_id=ticket_id,
+                    roles=roles,
+                )
+            except Exception:
+                _logger.exception("Failed to log registration to channel")
             # log the mapping of ticket to discord id to file
             await order_ins.log_ticket_and_discord_id_to_file(
                 discord_user_id=interaction.user.id,
@@ -118,14 +121,17 @@ class RegistrationForm(discord.ui.Modal, title="Europython 2023 Registration"):
             _logger.error(error_msg)
             msg = "Something went wrong, please check your input and try again."
 
-            await log_to_channel(
-                channel=interaction.client.get_channel(config.REG_LOG_CHANNEL_ID),
-                interaction=interaction,
-                name=self.name.value,
-                order=self.order.value,
-                roles=roles,
-                error=NotFoundError(error_msg),
-            )
+            try:
+                await log_to_channel(
+                    channel=interaction.client.get_channel(config.REG_LOG_CHANNEL_ID),
+                    interaction=interaction,
+                    name=self.name.value,
+                    order=self.order.value,
+                    roles=roles,
+                    error=NotFoundError(error_msg),
+                )
+            except Exception:
+                _logger.exception("Failed to log error to channel")
 
         await interaction.response.send_message(msg, ephemeral=True, delete_after=20)
 
@@ -135,11 +141,14 @@ class RegistrationForm(discord.ui.Modal, title="Europython 2023 Registration"):
         _logger.error("An error occurred!", exc_info=error)
 
         # log error message in discord channel
-        await log_to_channel(
-            channel=interaction.client.get_channel(config.REG_LOG_CHANNEL_ID),
-            interaction=interaction,
-            error=error,
-        )
+        try:
+            await log_to_channel(
+                channel=interaction.client.get_channel(config.REG_LOG_CHANNEL_ID),
+                interaction=interaction,
+                error=error,
+            )
+        except Exception:
+            _logger.exception("Failed to log error to channel")
         if isinstance(error, AlreadyRegisteredError):
             _msg = "You have already registered! If you think it is not true"
         elif isinstance(error, NotFoundError):
