@@ -60,6 +60,8 @@ class NotifierConfiguration:
     notification_channels: list[NotificationChannel]
     rooms: Mapping[str, RoomConfiguration]
     webhooks: Mapping[str, yarl.URL] = attrs.field(repr=False, validator=_URL_MAPPING)
+    livestream_url: str = attrs.field(validator=_INSTANCE_OF_STR, default="")
+    q_and_a_url: str = attrs.field(validator=_INSTANCE_OF_STR, default="")
     timewarp: bool = attrs.field(validator=_INSTANCE_OF_BOOL, default=False)
     timewarp_time: str = attrs.field(validator=_INSTANCE_OF_STR, default="")
 

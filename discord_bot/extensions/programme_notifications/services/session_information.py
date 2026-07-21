@@ -66,14 +66,15 @@ class SessionInformation:
     def _get_livestream_url(self, session: europython.Session) -> yarl.URL | None:
         """Get the livestream url.
 
-        Get env var name for this session from the config and then get the livestream url from the env var.
+        The URL is built from the ``livestream_url`` template in the
+        configuration, which may use the ``{video_url}`` and ``{code}``
+        placeholders. If the template is empty, no livestream URL is
+        returned.
 
         :param session: The session
         :return: The livestream URL or None
         """
-        if session.submission is None:
-            return None
-        return yarl.URL(f"{self._config.video_url}/talks/{session.submission.code}")
+        return self._format_session_url(self._config.livestream_url, session)
 
     def _get_discord_channel_id(self, session: europython.Session) -> str | None:
         """Get the discord channel id for this session.
@@ -89,17 +90,33 @@ class SessionInformation:
     def _get_q_and_a_url(self, session: europython.Session) -> yarl.URL | None:
         """Get the Q&A url for this session.
 
-        :param session: The session
-        :return: The Q&A url for the room or None
-        """
-        if session.submission is None:
-            return None
-        return yarl.URL(f"{self._config.video_url}/talks/{session.submission.code}/questions/")
+        The URL is built from the ``q_and_a_url`` template in the
+        configuration, which may use the ``{video_url}`` and ``{code}``
+        placeholders. If the template is empty (e.g. when there is no
+        online Q&A), no Q&A URL is returned.
 
-        # try:
-        #     return self._config.rooms[str(session.slot.room_id)].slido_room_url
-        # except (KeyError, AttributeError):
-        #     return None
+        :param session: The session
+        :return: The Q&A url or None
+        """
+        return self._format_session_url(self._config.q_and_a_url, session)
+
+    def _format_session_url(
+        self, template: str, session: europython.Session
+    ) -> yarl.URL | None:
+        """Build a session URL from a configuration template.
+
+        :param template: A URL template that may use the ``{video_url}``
+            and ``{code}`` placeholders
+        :param session: The session
+        :return: The formatted URL, or None if the template is empty or
+            the placeholders cannot be filled
+        """
+        if not template:
+            return None
+        if "{code}" in template and session.submission is None:
+            return None
+        code = session.submission.code if session.submission is not None else ""
+        return yarl.URL(template.format(video_url=self._config.video_url, code=code))
 
     def refresh_from_sessions(self, sessions: list[europython.Session]) -> None:
         """Refresh from a list of sessions.
